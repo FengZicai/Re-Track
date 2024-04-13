@@ -1,0 +1,3524 @@
+/home/fengzicai/anaconda3/envs/pytorch_1_1_0/bin/python /media/fengzicai/fzc/3Dsiamesetracker/tools/eval_siamese.py --cfg_file cfgs/default.yaml --eval_mode siameseoffline --dataset_path=/media/fengzicai/fzc/KITTI_TRACKING/training --siam_ckpt /media/fengzicai/fzc/3Dsiamesetracker/output/siamese/default/three_gussion_ckpt/checkpoint_epoch_14.pth --DenseAutoEncoder
+/media/fengzicai/fzc/3Dsiamesetracker/tools/../lib/config.py:187: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  yaml_cfg = edict(yaml.load(f))
+2019-11-27 00:00:40,766 [MainThread  ] [INFO ]  **********************Start logging**********************
+2019-11-27 00:00:40,766 [MainThread  ] [INFO ]  Parameters:
+2019-11-27 00:00:40,766 [MainThread  ] [INFO ]  detailed_metrics : False
+2019-11-27 00:00:40,766 [MainThread  ] [INFO ]     dataset_path : /media/fengzicai/fzc/KITTI_TRACKING/training
+2019-11-27 00:00:40,766 [MainThread  ] [INFO ]       bneck_size : 128
+2019-11-27 00:00:40,766 [MainThread  ] [INFO ]       batch_size : 32
+2019-11-27 00:00:40,766 [MainThread  ] [INFO ]              GPU : -1
+2019-11-27 00:00:40,766 [MainThread  ] [INFO ]     model_fusion : None
+2019-11-27 00:00:40,766 [MainThread  ] [INFO ]  shape_aggregation : firstandprevious
+2019-11-27 00:00:40,766 [MainThread  ] [INFO ]     search_space : Exhaustive
+2019-11-27 00:00:40,767 [MainThread  ] [INFO ]  number_candidate : 125
+2019-11-27 00:00:40,767 [MainThread  ] [INFO ]     reference_BB : current_gt
+2019-11-27 00:00:40,767 [MainThread  ] [INFO ]          regress : gaussian
+2019-11-27 00:00:40,767 [MainThread  ] [INFO ]    category_name : Car
+2019-11-27 00:00:40,767 [MainThread  ] [INFO ]  lambda_completion : 1e-06
+2019-11-27 00:00:40,767 [MainThread  ] [INFO ]   sigma_Gaussian : 1
+2019-11-27 00:00:40,767 [MainThread  ] [INFO ]        offset_BB : 0
+2019-11-27 00:00:40,767 [MainThread  ] [INFO ]         scale_BB : 1.25
+2019-11-27 00:00:40,767 [MainThread  ] [INFO ]        IoU_Space : 3
+2019-11-27 00:00:40,767 [MainThread  ] [INFO ]   max_num_worker : 6
+2019-11-27 00:00:40,767 [MainThread  ] [INFO ]        inputsize : 2048
+2019-11-27 00:00:40,768 [MainThread  ] [INFO ]         set_cfgs : None
+2019-11-27 00:00:40,768 [MainThread  ] [INFO ]        eval_mode : siameseoffline
+2019-11-27 00:00:40,768 [MainThread  ] [INFO ]         ckpt_dir : None
+2019-11-27 00:00:40,768 [MainThread  ] [INFO ]       output_dir : None
+2019-11-27 00:00:40,768 [MainThread  ] [INFO ]        extra_tag : default
+2019-11-27 00:00:40,768 [MainThread  ] [INFO ]         cfg_file : cfgs/default.yaml
+2019-11-27 00:00:40,768 [MainThread  ] [INFO ]         eval_all : False
+2019-11-27 00:00:40,768 [MainThread  ] [INFO ]        siam_ckpt : /media/fengzicai/fzc/3Dsiamesetracker/output/siamese/default/three_gussion_ckpt/checkpoint_epoch_14.pth
+2019-11-27 00:00:40,768 [MainThread  ] [INFO ]       chkpt_file : None
+2019-11-27 00:00:40,768 [MainThread  ] [INFO ]         rpn_ckpt : None
+2019-11-27 00:00:40,768 [MainThread  ] [INFO ]          workers : 4
+2019-11-27 00:00:40,768 [MainThread  ] [INFO ]  save_rpn_feature : False
+2019-11-27 00:00:40,769 [MainThread  ] [INFO ]      save_result : False
+2019-11-27 00:00:40,769 [MainThread  ] [INFO ]             test : False
+2019-11-27 00:00:40,769 [MainThread  ] [INFO ]  DenseAutoEncoder : True
+2019-11-27 00:00:40,769 [MainThread  ] [INFO ]  cfg.TAG: default
+2019-11-27 00:00:40,769 [MainThread  ] [INFO ]  cfg.CLASSES: Car
+2019-11-27 00:00:40,769 [MainThread  ] [INFO ]  cfg.INCLUDE_SIMILAR_TYPE: False
+2019-11-27 00:00:40,769 [MainThread  ] [INFO ]  cfg.AUG_DATA: False
+2019-11-27 00:00:40,769 [MainThread  ] [INFO ]  cfg.AUG_METHOD_LIST: ['rotation', 'scaling', 'flip']
+2019-11-27 00:00:40,769 [MainThread  ] [INFO ]  cfg.AUG_METHOD_PROB: [1.0, 1.0, 0.5]
+2019-11-27 00:00:40,769 [MainThread  ] [INFO ]  cfg.AUG_ROT_RANGE: 18
+2019-11-27 00:00:40,769 [MainThread  ] [INFO ]  cfg.GT_AUG_ENABLED: False
+2019-11-27 00:00:40,769 [MainThread  ] [INFO ]  cfg.GT_EXTRA_NUM: 15
+2019-11-27 00:00:40,770 [MainThread  ] [INFO ]  cfg.GT_AUG_RAND_NUM: True
+2019-11-27 00:00:40,770 [MainThread  ] [INFO ]  cfg.GT_AUG_APPLY_PROB: 1.0
+2019-11-27 00:00:40,770 [MainThread  ] [INFO ]  cfg.GT_AUG_HARD_RATIO: 0.6
+2019-11-27 00:00:40,770 [MainThread  ] [INFO ]  cfg.PC_REDUCE_BY_RANGE: True
+2019-11-27 00:00:40,770 [MainThread  ] [INFO ]  cfg.PC_AREA_SCOPE: [[-40.   40. ]
+ [ -1.    3. ]
+ [  0.   70.4]]
+2019-11-27 00:00:40,771 [MainThread  ] [INFO ]  cfg.CLS_MEAN_SIZE: [[1.5256319 1.6285675 3.8831165]]
+2019-11-27 00:00:40,771 [MainThread  ] [INFO ]  
+cfg.RPN = edict()
+2019-11-27 00:00:40,771 [MainThread  ] [INFO ]  cfg.RPN.ENABLED: False
+2019-11-27 00:00:40,771 [MainThread  ] [INFO ]  cfg.RPN.FIXED: False
+2019-11-27 00:00:40,771 [MainThread  ] [INFO ]  cfg.RPN.USE_INTENSITY: False
+2019-11-27 00:00:40,771 [MainThread  ] [INFO ]  cfg.RPN.LOC_XZ_FINE: True
+2019-11-27 00:00:40,771 [MainThread  ] [INFO ]  cfg.RPN.LOC_SCOPE: 3.0
+2019-11-27 00:00:40,771 [MainThread  ] [INFO ]  cfg.RPN.LOC_BIN_SIZE: 0.5
+2019-11-27 00:00:40,771 [MainThread  ] [INFO ]  cfg.RPN.NUM_HEAD_BIN: 12
+2019-11-27 00:00:40,772 [MainThread  ] [INFO ]  cfg.RPN.BACKBONE: pointnet2_msg
+2019-11-27 00:00:40,772 [MainThread  ] [INFO ]  cfg.RPN.USE_BN: True
+2019-11-27 00:00:40,772 [MainThread  ] [INFO ]  cfg.RPN.NUM_POINTS: 16384
+2019-11-27 00:00:40,772 [MainThread  ] [INFO ]  
+cfg.RPN.SA_CONFIG = edict()
+2019-11-27 00:00:40,772 [MainThread  ] [INFO ]  cfg.RPN.SA_CONFIG.NPOINTS: [4096, 1024, 256, 64]
+2019-11-27 00:00:40,772 [MainThread  ] [INFO ]  cfg.RPN.SA_CONFIG.RADIUS: [[0.1, 0.5], [0.5, 1.0], [1.0, 2.0], [2.0, 4.0]]
+2019-11-27 00:00:40,772 [MainThread  ] [INFO ]  cfg.RPN.SA_CONFIG.NSAMPLE: [[16, 32], [16, 32], [16, 32], [16, 32]]
+2019-11-27 00:00:40,772 [MainThread  ] [INFO ]  cfg.RPN.SA_CONFIG.MLPS: [[[16, 16, 32], [32, 32, 64]], [[64, 64, 128], [64, 96, 128]], [[128, 196, 256], [128, 196, 256]], [[256, 256, 512], [256, 384, 512]]]
+2019-11-27 00:00:40,772 [MainThread  ] [INFO ]  cfg.RPN.FP_MLPS: [[128, 128], [256, 256], [512, 512], [512, 512]]
+2019-11-27 00:00:40,772 [MainThread  ] [INFO ]  cfg.RPN.CLS_FC: [128]
+2019-11-27 00:00:40,772 [MainThread  ] [INFO ]  cfg.RPN.REG_FC: [128]
+2019-11-27 00:00:40,773 [MainThread  ] [INFO ]  cfg.RPN.DP_RATIO: 0.5
+2019-11-27 00:00:40,773 [MainThread  ] [INFO ]  cfg.RPN.LOSS_CLS: SigmoidFocalLoss
+2019-11-27 00:00:40,773 [MainThread  ] [INFO ]  cfg.RPN.FG_WEIGHT: 15
+2019-11-27 00:00:40,773 [MainThread  ] [INFO ]  cfg.RPN.FOCAL_ALPHA: [0.25, 0.75]
+2019-11-27 00:00:40,773 [MainThread  ] [INFO ]  cfg.RPN.FOCAL_GAMMA: 2.0
+2019-11-27 00:00:40,773 [MainThread  ] [INFO ]  cfg.RPN.REG_LOSS_WEIGHT: [1.0, 1.0, 1.0, 1.0]
+2019-11-27 00:00:40,773 [MainThread  ] [INFO ]  cfg.RPN.LOSS_WEIGHT: [1.0, 1.0]
+2019-11-27 00:00:40,773 [MainThread  ] [INFO ]  cfg.RPN.NMS_TYPE: normal
+2019-11-27 00:00:40,773 [MainThread  ] [INFO ]  cfg.RPN.SCORE_THRESH: 0.3
+2019-11-27 00:00:40,773 [MainThread  ] [INFO ]  
+cfg.RCNN = edict()
+2019-11-27 00:00:40,773 [MainThread  ] [INFO ]  cfg.RCNN.ENABLED: True
+2019-11-27 00:00:40,773 [MainThread  ] [INFO ]  cfg.RCNN.USE_RPN_FEATURES: True
+2019-11-27 00:00:40,774 [MainThread  ] [INFO ]  cfg.RCNN.USE_MASK: True
+2019-11-27 00:00:40,774 [MainThread  ] [INFO ]  cfg.RCNN.MASK_TYPE: seg
+2019-11-27 00:00:40,774 [MainThread  ] [INFO ]  cfg.RCNN.USE_INTENSITY: False
+2019-11-27 00:00:40,774 [MainThread  ] [INFO ]  cfg.RCNN.USE_DEPTH: True
+2019-11-27 00:00:40,774 [MainThread  ] [INFO ]  cfg.RCNN.USE_SEG_SCORE: False
+2019-11-27 00:00:40,774 [MainThread  ] [INFO ]  cfg.RCNN.ROI_SAMPLE_JIT: True
+2019-11-27 00:00:40,774 [MainThread  ] [INFO ]  cfg.RCNN.ROI_FG_AUG_TIMES: 10
+2019-11-27 00:00:40,774 [MainThread  ] [INFO ]  cfg.RCNN.REG_AUG_METHOD: multiple
+2019-11-27 00:00:40,774 [MainThread  ] [INFO ]  cfg.RCNN.POOL_EXTRA_WIDTH: 1.0
+2019-11-27 00:00:40,774 [MainThread  ] [INFO ]  cfg.RCNN.LOC_SCOPE: 1.5
+2019-11-27 00:00:40,774 [MainThread  ] [INFO ]  cfg.RCNN.LOC_BIN_SIZE: 0.5
+2019-11-27 00:00:40,775 [MainThread  ] [INFO ]  cfg.RCNN.NUM_HEAD_BIN: 9
+2019-11-27 00:00:40,775 [MainThread  ] [INFO ]  cfg.RCNN.LOC_Y_BY_BIN: False
+2019-11-27 00:00:40,775 [MainThread  ] [INFO ]  cfg.RCNN.LOC_Y_SCOPE: 0.5
+2019-11-27 00:00:40,775 [MainThread  ] [INFO ]  cfg.RCNN.LOC_Y_BIN_SIZE: 0.25
+2019-11-27 00:00:40,775 [MainThread  ] [INFO ]  cfg.RCNN.SIZE_RES_ON_ROI: False
+2019-11-27 00:00:40,775 [MainThread  ] [INFO ]  cfg.RCNN.USE_BN: False
+2019-11-27 00:00:40,775 [MainThread  ] [INFO ]  cfg.RCNN.DP_RATIO: 0.0
+2019-11-27 00:00:40,775 [MainThread  ] [INFO ]  cfg.RCNN.BACKBONE: pointnet
+2019-11-27 00:00:40,775 [MainThread  ] [INFO ]  cfg.RCNN.XYZ_UP_LAYER: [128, 128]
+2019-11-27 00:00:40,775 [MainThread  ] [INFO ]  cfg.RCNN.NUM_POINTS: 512
+2019-11-27 00:00:40,775 [MainThread  ] [INFO ]  
+cfg.RCNN.SA_CONFIG = edict()
+2019-11-27 00:00:40,775 [MainThread  ] [INFO ]  cfg.RCNN.SA_CONFIG.NPOINTS: [128, 32, -1]
+2019-11-27 00:00:40,776 [MainThread  ] [INFO ]  cfg.RCNN.SA_CONFIG.RADIUS: [0.2, 0.4, 100]
+2019-11-27 00:00:40,776 [MainThread  ] [INFO ]  cfg.RCNN.SA_CONFIG.NSAMPLE: [64, 64, 64]
+2019-11-27 00:00:40,776 [MainThread  ] [INFO ]  cfg.RCNN.SA_CONFIG.MLPS: [[128, 128, 128], [128, 128, 256], [256, 256, 512]]
+2019-11-27 00:00:40,776 [MainThread  ] [INFO ]  cfg.RCNN.CLS_FC: [256, 256]
+2019-11-27 00:00:40,776 [MainThread  ] [INFO ]  cfg.RCNN.REG_FC: [256, 256]
+2019-11-27 00:00:40,776 [MainThread  ] [INFO ]  cfg.RCNN.LOSS_CLS: BinaryCrossEntropy
+2019-11-27 00:00:40,776 [MainThread  ] [INFO ]  cfg.RCNN.FOCAL_ALPHA: [0.25, 0.75]
+2019-11-27 00:00:40,776 [MainThread  ] [INFO ]  cfg.RCNN.FOCAL_GAMMA: 2.0
+2019-11-27 00:00:40,776 [MainThread  ] [INFO ]  cfg.RCNN.CLS_WEIGHT: [1. 1. 1.]
+2019-11-27 00:00:40,777 [MainThread  ] [INFO ]  cfg.RCNN.CLS_FG_THRESH: 0.6
+2019-11-27 00:00:40,777 [MainThread  ] [INFO ]  cfg.RCNN.CLS_BG_THRESH: 0.45
+2019-11-27 00:00:40,777 [MainThread  ] [INFO ]  cfg.RCNN.CLS_BG_THRESH_LO: 0.05
+2019-11-27 00:00:40,777 [MainThread  ] [INFO ]  cfg.RCNN.REG_FG_THRESH: 0.55
+2019-11-27 00:00:40,777 [MainThread  ] [INFO ]  cfg.RCNN.FG_RATIO: 0.5
+2019-11-27 00:00:40,777 [MainThread  ] [INFO ]  cfg.RCNN.ROI_PER_IMAGE: 64
+2019-11-27 00:00:40,777 [MainThread  ] [INFO ]  cfg.RCNN.HARD_BG_RATIO: 0.8
+2019-11-27 00:00:40,777 [MainThread  ] [INFO ]  cfg.RCNN.SCORE_THRESH: 0.3
+2019-11-27 00:00:40,777 [MainThread  ] [INFO ]  cfg.RCNN.NMS_THRESH: 0.1
+2019-11-27 00:00:40,777 [MainThread  ] [INFO ]  
+cfg.TRAIN = edict()
+2019-11-27 00:00:40,777 [MainThread  ] [INFO ]  cfg.TRAIN.SPLIT: train
+2019-11-27 00:00:40,778 [MainThread  ] [INFO ]  cfg.TRAIN.VAL_SPLIT: valid
+2019-11-27 00:00:40,778 [MainThread  ] [INFO ]  cfg.TRAIN.LR: 0.002
+2019-11-27 00:00:40,778 [MainThread  ] [INFO ]  cfg.TRAIN.LR_CLIP: 1e-05
+2019-11-27 00:00:40,778 [MainThread  ] [INFO ]  cfg.TRAIN.LR_DECAY: 0.5
+2019-11-27 00:00:40,778 [MainThread  ] [INFO ]  cfg.TRAIN.DECAY_STEP_LIST: [100, 150, 180, 200]
+2019-11-27 00:00:40,778 [MainThread  ] [INFO ]  cfg.TRAIN.LR_WARMUP: True
+2019-11-27 00:00:40,778 [MainThread  ] [INFO ]  cfg.TRAIN.WARMUP_MIN: 0.0002
+2019-11-27 00:00:40,778 [MainThread  ] [INFO ]  cfg.TRAIN.WARMUP_EPOCH: 1
+2019-11-27 00:00:40,778 [MainThread  ] [INFO ]  cfg.TRAIN.BN_MOMENTUM: 0.1
+2019-11-27 00:00:40,778 [MainThread  ] [INFO ]  cfg.TRAIN.BN_DECAY: 0.5
+2019-11-27 00:00:40,778 [MainThread  ] [INFO ]  cfg.TRAIN.BNM_CLIP: 0.01
+2019-11-27 00:00:40,779 [MainThread  ] [INFO ]  cfg.TRAIN.BN_DECAY_STEP_LIST: [1000]
+2019-11-27 00:00:40,779 [MainThread  ] [INFO ]  cfg.TRAIN.OPTIMIZER: adam_onecycle
+2019-11-27 00:00:40,779 [MainThread  ] [INFO ]  cfg.TRAIN.WEIGHT_DECAY: 0.001
+2019-11-27 00:00:40,779 [MainThread  ] [INFO ]  cfg.TRAIN.MOMENTUM: 0.9
+2019-11-27 00:00:40,779 [MainThread  ] [INFO ]  cfg.TRAIN.MOMS: [0.95, 0.85]
+2019-11-27 00:00:40,779 [MainThread  ] [INFO ]  cfg.TRAIN.DIV_FACTOR: 10.0
+2019-11-27 00:00:40,779 [MainThread  ] [INFO ]  cfg.TRAIN.PCT_START: 0.4
+2019-11-27 00:00:40,779 [MainThread  ] [INFO ]  cfg.TRAIN.GRAD_NORM_CLIP: 1.0
+2019-11-27 00:00:40,779 [MainThread  ] [INFO ]  cfg.TRAIN.RPN_PRE_NMS_TOP_N: 9000
+2019-11-27 00:00:40,779 [MainThread  ] [INFO ]  cfg.TRAIN.RPN_POST_NMS_TOP_N: 512
+2019-11-27 00:00:40,779 [MainThread  ] [INFO ]  cfg.TRAIN.RPN_NMS_THRESH: 0.85
+2019-11-27 00:00:40,779 [MainThread  ] [INFO ]  cfg.TRAIN.RPN_DISTANCE_BASED_PROPOSE: True
+2019-11-27 00:00:40,780 [MainThread  ] [INFO ]  
+cfg.TEST = edict()
+2019-11-27 00:00:40,780 [MainThread  ] [INFO ]  cfg.TEST.SPLIT: test
+2019-11-27 00:00:40,780 [MainThread  ] [INFO ]  cfg.TEST.RPN_PRE_NMS_TOP_N: 9000
+2019-11-27 00:00:40,780 [MainThread  ] [INFO ]  cfg.TEST.RPN_POST_NMS_TOP_N: 100
+2019-11-27 00:00:40,780 [MainThread  ] [INFO ]  cfg.TEST.RPN_NMS_THRESH: 0.8
+2019-11-27 00:00:40,780 [MainThread  ] [INFO ]  cfg.TEST.RPN_DISTANCE_BASED_PROPOSE: True
+2019-11-27 00:01:36,361 [MainThread  ] [INFO ]  preloading Sample..
+2019-11-27 00:02:45,768 [MainThread  ] [INFO ]  Packed Sample preloaded!
+2019-11-27 00:02:45,894 [MainThread  ] [INFO ]  PointRCNN(
+  (model): DenseModel(
+    (AE): DPAutoEncoder(
+      (DAE): DPCEncoderDecoder(
+        (conv_1): Conv1d(3, 64, kernel_size=(1,), stride=(1,))
+        (conv_2): Conv1d(64, 128, kernel_size=(1,), stride=(1,))
+        (conv_3): Conv1d(128, 128, kernel_size=(1,), stride=(1,))
+        (conv1_1): Conv1d(144, 1024, kernel_size=(1,), stride=(1,))
+        (fc1): Linear(in_features=128, out_features=1024, bias=True)
+        (fc2): Linear(in_features=1024, out_features=6144, bias=True)
+        (globalAvgPool2048): AvgPool1d(kernel_size=(2048,), stride=(1,), padding=(0,))
+        (globalAvgPool8): AvgPool1d(kernel_size=(8,), stride=(1,), padding=(0,))
+        (fc1_0_1): Linear(in_features=128, out_features=8, bias=True)
+        (fc1_0_2): Linear(in_features=8, out_features=128, bias=True)
+        (fc2_0_1): Linear(in_features=128, out_features=8, bias=True)
+        (fc2_0_2): Linear(in_features=8, out_features=128, bias=True)
+        (sigmoid): Sigmoid()
+      )
+    )
+    (score): Linear(in_features=256, out_features=1, bias=True)
+  )
+  (proposal_target_layer): ProposalTargetLayer()
+)
+2019-11-27 00:02:51,669 [MainThread  ] [INFO ]  ==> Loading part model from checkpoint '/media/fengzicai/fzc/3Dsiamesetracker/output/siamese/default/three_gussion_ckpt/checkpoint_epoch_14.pth'
+2019-11-27 00:02:51,766 [MainThread  ] [INFO ]  ==> Done (loaded 22/22)
+2019-11-27 00:02:51,769 [MainThread  ] [INFO ]  ---- EPOCH 1 JOINT EVALUATION ----
+2019-11-27 00:02:51,769 [MainThread  ] [INFO ]  ==> Output file: ../output/siamese/default/eval/epoch_no_number/rpnpred64
+eval:   0%|                                                                                                                                                                                         | 0/120 [00:00<?, ?it/s]0019000007
+eval:   1%|█▍                                                                                                                                                                             | 1/120 [01:02<2:03:10, 62.10s/it]Succ/Prec:80.3/91.6
+Test 1: Time 7.781s (it:10.691s) Data:3.217s (it:3.217s), Succ/Prec:80.3/91.6:   1%|▊                                                                                                     | 1/120 [01:02<2:03:10, 62.10s/it]0019000085
+0019000086
+0019000087
+0019000088
+0019000089
+Test 1: Time 2.169s (it:6.156s) Data:1.612s (it:0.007s), Succ/Prec:72.8/87.1:   2%|█▋                                                                                                     | 2/120 [02:40<2:23:29, 72.96s/it]Succ/Prec:72.8/87.1
+0019000430
+Test 1: Time 1.217s (it:10.168s) Data:1.103s (it:0.084s), Succ/Prec:72.2/88.0:   2%|██▌                                                                                                  | 3/120 [06:17<3:46:20, 116.07s/it]Succ/Prec:72.2/88.0
+0019000478
+0019000786
+0019000788
+0019000789
+0019000790
+0019000791
+Test 1: Time 1.067s (it:13.622s) Data:0.856s (it:0.115s), Succ/Prec:57.6/79.8:   3%|███▎                                                                                                 | 4/120 [11:06<5:25:07, 168.16s/it]Succ/Prec:57.6/79.8
+0019000554
+0019000555
+0019000557
+0019000558
+0019000559
+0019000560
+0019000561
+0019000562
+0019000563
+0019000564
+0019000565
+0019000566
+0019000567
+0019000568
+0019000569
+0019000570
+0019000571
+0019000720
+0019000722
+0019000723
+0019000724
+0019000725
+Test 1: Time 1.103s (it:6.391s) Data:0.715s (it:0.153s), Succ/Prec:59.8/79.1:   4%|████▎                                                                                                 | 5/120 [14:39<5:47:43, 181.42s/it]Succ/Prec:59.8/79.1
+Test 1: Time 1.114s (it:0.862s) Data:0.610s (it:0.085s), Succ/Prec:68.4/85.1:   5%|█████                                                                                                 | 6/120 [15:29<4:29:48, 142.00s/it]Succ/Prec:68.4/85.1
+Test 1: Time 1.095s (it:0.879s) Data:0.530s (it:0.046s), Succ/Prec:66.7/88.3:   6%|█████▉                                                                                                | 7/120 [16:49<3:52:35, 123.50s/it]Succ/Prec:66.7/88.3
+0020000183
+Test 1: Time 1.045s (it:0.691s) Data:0.477s (it:0.108s), Succ/Prec:70.4/88.1:   7%|██████▊                                                                                               | 8/120 [19:33<4:13:05, 135.58s/it]Succ/Prec:70.4/88.1
+0020000001
+Test 1: Time 1.046s (it:0.876s) Data:0.435s (it:0.099s), Succ/Prec:70.1/87.4:   8%|███████▋                                                                                              | 9/120 [19:53<3:06:33, 100.84s/it]Succ/Prec:70.1/87.4
+Test 1: Time 1.039s (it:1.172s) Data:0.394s (it:0.027s), Succ/Prec:78.2/91.1:   8%|████████▌                                                                                             | 10/120 [20:43<2:36:54, 85.59s/it]Succ/Prec:78.2/91.1
+Test 1: Time 1.057s (it:5.346s) Data:0.364s (it:0.062s), Succ/Prec:79.9/92.7:   9%|█████████▎                                                                                            | 11/120 [22:18<2:40:57, 88.60s/it]Succ/Prec:79.9/92.7
+0020000097
+Test 1: Time 1.052s (it:7.212s) Data:0.337s (it:0.037s), Succ/Prec:79.8/90.8:  10%|██████████▏                                                                                           | 12/120 [23:56<2:44:15, 91.26s/it]Succ/Prec:79.8/90.8
+0020000094
+0020000123
+0020000139
+0020000142
+0020000143
+0020000144
+0020000145
+0020000146
+0020000147
+0020000148
+0020000149
+0020000150
+Test 1: Time 1.028s (it:1.965s) Data:0.315s (it:0.050s), Succ/Prec:71.8/87.3:  11%|██████████▉                                                                                          | 13/120 [25:58<2:59:11, 100.49s/it]Succ/Prec:71.8/87.3
+0020000119
+Test 1: Time 1.018s (it:2.035s) Data:0.297s (it:0.075s), Succ/Prec:69.3/84.9:  12%|███████████▊                                                                                         | 14/120 [27:49<3:03:17, 103.75s/it]Succ/Prec:69.3/84.9
+0020000036
+0020000077
+0020000078
+0020000079
+0020000080
+0020000081
+Test 1: Time 1.008s (it:0.783s) Data:0.282s (it:0.062s), Succ/Prec:58.8/80.3:  12%|████████████▋                                                                                        | 15/120 [29:23<2:56:35, 100.91s/it]Succ/Prec:58.8/80.3
+0020000001
+0020000018
+0020000020
+0020000021
+0020000022
+0020000023
+0020000024
+0020000025
+0020000026
+0020000028
+0020000029
+0020000031
+0020000032
+0020000033
+0020000034
+0020000035
+0020000036
+0020000037
+0020000038
+0020000039
+0020000040
+0020000041
+0020000042
+0020000043
+0020000044
+0020000045
+0020000046
+0020000049
+0020000051
+0020000052
+0020000053
+0020000054
+0020000060
+0020000064
+0020000067
+0020000068
+0020000069
+0020000071
+0020000072
+0020000080
+Test 1: Time 1.004s (it:1.012s) Data:0.272s (it:0.130s), Succ/Prec:58.6/78.0:  13%|█████████████▍                                                                                       | 16/120 [32:24<3:36:33, 124.93s/it]Succ/Prec:58.6/78.0
+0020000032
+0020000039
+0020000040
+0020000047
+0020000057
+0020000065
+Test 1: Time 0.975s (it:1.824s) Data:0.265s (it:0.151s), Succ/Prec:71.3/85.1:  14%|██████████████▎                                                                                      | 17/120 [35:13<3:57:06, 138.12s/it]Succ/Prec:71.3/85.1
+0020000001
+0020000002
+0020000009
+0020000011
+0020000017
+0020000019
+0020000020
+0020000021
+0020000025
+0020000029
+0020000031
+0020000033
+0020000034
+0020000035
+0020000037
+0020000050
+0020000067
+0020000070
+0020000071
+0020000072
+0020000073
+0020000074
+0020000075
+0020000076
+0020000077
+0020000078
+0020000079
+0020000080
+0020000081
+0020000082
+0020000083
+0020000084
+0020000085
+0020000086
+0020000087
+0020000088
+0020000089
+0020000090
+Test 1: Time 0.989s (it:2.002s) Data:0.259s (it:0.159s), Succ/Prec:58.7/84.2:  15%|███████████████▏                                                                                     | 18/120 [37:13<3:45:29, 132.64s/it]Succ/Prec:58.7/84.2
+0020000005
+0020000018
+0020000019
+0020000023
+0020000027
+0020000028
+0020000029
+0020000030
+0020000031
+0020000032
+0020000033
+0020000034
+0020000035
+0020000036
+0020000037
+0020000038
+0020000039
+0020000040
+0020000041
+0020000042
+0020000043
+0020000044
+0020000045
+Test 1: Time 0.996s (it:2.069s) Data:0.248s (it:0.046s), Succ/Prec:38.4/52.0:  16%|███████████████▉                                                                                     | 19/120 [38:16<3:07:51, 111.60s/it]Succ/Prec:38.4/52.0
+0020000041
+0020000042
+0020000045
+0020000047
+0020000048
+0020000049
+0020000051
+0020000052
+0020000054
+0020000055
+0020000056
+0020000057
+0020000058
+0020000059
+0020000060
+0020000061
+0020000062
+0020000063
+0020000064
+0020000065
+0020000066
+Test 1: Time 0.994s (it:0.972s) Data:0.237s (it:0.025s), Succ/Prec:53.8/73.5:  17%|████████████████▊                                                                                    | 20/120 [40:29<3:16:55, 118.15s/it]Succ/Prec:53.8/73.5
+0020000088
+0020000089
+Test 1: Time 0.992s (it:3.837s) Data:0.232s (it:0.144s), Succ/Prec:63.4/81.8:  18%|█████████████████▊                                                                                    | 21/120 [41:15<2:39:28, 96.66s/it]Succ/Prec:63.4/81.8
+0020000073
+0020000074
+0020000075
+0020000077
+0020000078
+0020000079
+0020000081
+0020000085
+0020000086
+0020000087
+0020000089
+0020000091
+0020000092
+0020000098
+0020000101
+0020000108
+0020000111
+0020000115
+0020000127
+Test 1: Time 0.988s (it:0.805s) Data:0.225s (it:0.064s), Succ/Prec:63.1/85.9:  18%|██████████████████▌                                                                                  | 22/120 [43:05<2:44:17, 100.58s/it]Succ/Prec:63.1/85.9
+Test 1: Time 0.983s (it:2.082s) Data:0.221s (it:0.135s), Succ/Prec:80.8/91.5:  19%|███████████████████▌                                                                                  | 23/120 [44:26<2:33:08, 94.73s/it]Succ/Prec:80.8/91.5
+0020000100
+0020000101
+0020000102
+0020000105
+0020000106
+0020000108
+0020000115
+0020000117
+0020000126
+0020000130
+0020000170
+0020000201
+0020000202
+Test 1: Time 0.990s (it:2.167s) Data:0.214s (it:0.047s), Succ/Prec:58.2/81.1:  20%|████████████████████▏                                                                                | 24/120 [46:26<2:43:46, 102.36s/it]Succ/Prec:58.2/81.1
+0020000128
+0020000131
+0020000132
+0020000133
+0020000134
+0020000135
+0020000136
+0020000142
+0020000152
+Test 1: Time 0.984s (it:0.810s) Data:0.207s (it:0.052s), Succ/Prec:63.0/86.0:  21%|█████████████████████▎                                                                                | 25/120 [47:43<2:29:35, 94.48s/it]Succ/Prec:63.0/86.0
+0020000153
+0020000788
+0020000794
+Test 1: Time 1.014s (it:2.136s) Data:0.204s (it:0.119s), Succ/Prec:73.8/88.0:  22%|█████████████████████▍                                                                             | 26/120 [1:00:04<7:31:58, 288.50s/it]Succ/Prec:73.8/88.0
+0020000171
+0020000172
+0020000173
+0020000174
+0020000175
+0020000177
+0020000178
+0020000179
+0020000180
+0020000182
+0020000183
+0020000184
+0020000185
+0020000186
+0020000187
+0020000189
+0020000190
+0020000192
+0020000193
+0020000194
+0020000195
+0020000196
+0020000197
+0020000198
+0020000199
+0020000200
+0020000201
+0020000202
+0020000203
+0020000204
+0020000205
+0020000206
+0020000208
+0020000209
+0020000210
+0020000211
+0020000212
+0020000213
+0020000214
+0020000215
+0020000216
+0020000217
+0020000218
+0020000219
+0020000220
+0020000222
+0020000224
+0020000227
+Test 1: Time 1.026s (it:0.724s) Data:0.209s (it:0.332s), Succ/Prec:7.2/8.4:  22%|██████████████████████▋                                                                              | 27/120 [1:01:52<6:03:24, 234.45s/it]Succ/Prec:7.2/8.4
+0020000186
+Test 1: Time 1.024s (it:0.848s) Data:0.202s (it:0.033s), Succ/Prec:64.8/83.5:  23%|███████████████████████                                                                            | 28/120 [1:02:19<4:24:04, 172.22s/it]Succ/Prec:64.8/83.5
+0020000203
+0020000205
+0020000206
+0020000207
+0020000208
+0020000209
+0020000211
+0020000212
+0020000213
+0020000214
+0020000215
+0020000216
+0020000217
+0020000218
+0020000219
+0020000222
+0020000223
+0020000224
+0020000225
+0020000226
+0020000227
+0020000228
+0020000229
+0020000230
+0020000231
+Test 1: Time 1.029s (it:2.021s) Data:0.197s (it:0.045s), Succ/Prec:22.2/30.7:  24%|███████████████████████▉                                                                           | 29/120 [1:03:21<3:31:08, 139.22s/it]Succ/Prec:22.2/30.7
+0020000206
+0020000209
+Test 1: Time 1.028s (it:1.738s) Data:0.191s (it:0.023s), Succ/Prec:69.7/85.4:  25%|████████████████████████▊                                                                          | 30/120 [1:03:56<2:41:48, 107.87s/it]Succ/Prec:69.7/85.4
+0020000222
+0020000223
+0020000229
+0020000231
+Test 1: Time 1.027s (it:0.637s) Data:0.187s (it:0.051s), Succ/Prec:60.9/83.2:  26%|█████████████████████████▊                                                                          | 31/120 [1:04:12<1:59:08, 80.32s/it]Succ/Prec:60.9/83.2
+0020000240
+Test 1: Time 1.027s (it:2.467s) Data:0.181s (it:0.011s), Succ/Prec:72.9/88.2:  27%|██████████████████████████▋                                                                         | 32/120 [1:04:27<1:28:58, 60.67s/it]Succ/Prec:72.9/88.2
+0020000226
+Test 1: Time 1.025s (it:0.746s) Data:0.176s (it:0.025s), Succ/Prec:54.2/77.6:  28%|███████████████████████████▌                                                                        | 33/120 [1:04:41<1:07:30, 46.56s/it]Succ/Prec:54.2/77.6
+0020000224
+0020000225
+0020000228
+0020000229
+0020000230
+0020000232
+0020000234
+0020000237
+0020000242
+0020000243
+0020000244
+0020000250
+0020000253
+0020000254
+0020000255
+Test 1: Time 1.027s (it:0.644s) Data:0.172s (it:0.031s), Succ/Prec:5.4/2.9:  28%|████████████████████████████▉                                                                         | 34/120 [1:05:23<1:04:58, 45.33s/it]Succ/Prec:5.4/2.9
+Test 1: Time 1.026s (it:0.648s) Data:0.168s (it:0.019s), Succ/Prec:62.9/78.6:  29%|█████████████████████████████▊                                                                        | 35/120 [1:05:28<47:01, 33.19s/it]Succ/Prec:62.9/78.6
+Test 1: Time 1.025s (it:1.085s) Data:0.163s (it:0.006s), Succ/Prec:71.8/88.2:  30%|██████████████████████████████▌                                                                       | 36/120 [1:05:43<38:52, 27.77s/it]Succ/Prec:71.8/88.2
+0020000266
+0020000272
+0020000273
+0020000274
+0020000275
+0020000276
+0020000277
+0020000278
+0020000279
+0020000280
+Test 1: Time 1.027s (it:1.992s) Data:0.160s (it:0.028s), Succ/Prec:33.9/40.8:  31%|███████████████████████████████▍                                                                      | 37/120 [1:06:06<36:28, 26.36s/it]Succ/Prec:33.9/40.8
+Test 1: Time 1.027s (it:2.324s) Data:0.156s (it:0.010s), Succ/Prec:68.0/85.6:  32%|████████████████████████████████▎                                                                     | 38/120 [1:06:42<40:01, 29.29s/it]Succ/Prec:68.0/85.6
+Test 1: Time 1.027s (it:0.977s) Data:0.152s (it:0.025s), Succ/Prec:72.1/80.4:  32%|█████████████████████████████████▏                                                                    | 39/120 [1:06:47<29:45, 22.04s/it]Succ/Prec:72.1/80.4
+Test 1: Time 1.026s (it:0.644s) Data:0.149s (it:0.012s), Succ/Prec:67.7/84.8:  33%|██████████████████████████████████                                                                    | 40/120 [1:07:03<26:54, 20.18s/it]Succ/Prec:67.7/84.8
+0020000286
+Test 1: Time 1.025s (it:0.687s) Data:0.145s (it:0.010s), Succ/Prec:59.7/80.0:  34%|██████████████████████████████████▊                                                                   | 41/120 [1:07:15<23:17, 17.69s/it]Succ/Prec:59.7/80.0
+0020000289
+0020000294
+0020000306
+0020000308
+0020000312
+0020000313
+0020000318
+Test 1: Time 1.021s (it:0.645s) Data:0.142s (it:0.013s), Succ/Prec:5.1/3.2:  35%|████████████████████████████████████▍                                                                   | 42/120 [1:08:12<38:14, 29.42s/it]Succ/Prec:5.1/3.2
+0020000293
+Test 1: Time 1.021s (it:1.022s) Data:0.140s (it:0.037s), Succ/Prec:67.7/87.7:  36%|████████████████████████████████████▌                                                                 | 43/120 [1:08:24<31:09, 24.28s/it]Succ/Prec:67.7/87.7
+Test 1: Time 1.018s (it:0.950s) Data:0.137s (it:0.018s), Succ/Prec:71.5/83.7:  37%|█████████████████████████████████████▍                                                                | 44/120 [1:09:03<36:27, 28.78s/it]Succ/Prec:71.5/83.7
+Test 1: Time 1.014s (it:0.631s) Data:0.135s (it:0.064s), Succ/Prec:32.5/39.8:  38%|██████████████████████████████████████▎                                                               | 45/120 [1:09:45<40:44, 32.59s/it]Succ/Prec:32.5/39.8
+0020000352
+Test 1: Time 1.010s (it:0.845s) Data:0.133s (it:0.031s), Succ/Prec:68.6/83.9:  38%|███████████████████████████████████████                                                               | 46/120 [1:10:30<44:51, 36.37s/it]Succ/Prec:68.6/83.9
+0020000331
+0020000402
+0020000403
+Test 1: Time 1.006s (it:2.885s) Data:0.132s (it:0.071s), Succ/Prec:67.3/83.5:  39%|███████████████████████████████████████▉                                                              | 47/120 [1:11:26<51:30, 42.34s/it]Succ/Prec:67.3/83.5
+0020000371
+Test 1: Time 1.004s (it:2.820s) Data:0.131s (it:0.092s), Succ/Prec:73.8/86.5:  40%|████████████████████████████████████████▊                                                             | 48/120 [1:11:57<46:27, 38.71s/it]Succ/Prec:73.8/86.5
+Test 1: Time 1.004s (it:1.039s) Data:0.129s (it:0.041s), Succ/Prec:67.9/87.9:  41%|█████████████████████████████████████████▋                                                            | 49/120 [1:12:05<35:06, 29.67s/it]Succ/Prec:67.9/87.9
+0020000351
+Test 1: Time 1.003s (it:0.627s) Data:0.127s (it:0.013s), Succ/Prec:66.9/84.5:  42%|██████████████████████████████████████████▌                                                           | 50/120 [1:12:29<32:38, 27.98s/it]Succ/Prec:66.9/84.5
+0020000359
+0020000421
+Test 1: Time 1.000s (it:6.064s) Data:0.125s (it:0.018s), Succ/Prec:70.1/84.9:  42%|███████████████████████████████████████████▎                                                          | 51/120 [1:13:23<40:57, 35.61s/it]Succ/Prec:70.1/84.9
+0020000359
+0020000371
+0020000384
+0020000385
+0020000386
+0020000435
+Test 1: Time 0.999s (it:7.866s) Data:0.124s (it:0.073s), Succ/Prec:51.7/73.9:  43%|████████████████████████████████████████████▏                                                         | 52/120 [1:14:37<53:31, 47.23s/it]Succ/Prec:51.7/73.9
+0020000372
+0020000373
+0020000374
+0020000375
+Test 1: Time 1.000s (it:0.660s) Data:0.122s (it:0.040s), Succ/Prec:51.3/80.7:  44%|█████████████████████████████████████████████                                                         | 53/120 [1:14:56<43:16, 38.76s/it]Succ/Prec:51.3/80.7
+0020000397
+0020000399
+Test 1: Time 0.999s (it:2.426s) Data:0.120s (it:0.023s), Succ/Prec:74.4/90.1:  45%|█████████████████████████████████████████████▉                                                        | 54/120 [1:15:23<38:48, 35.28s/it]Succ/Prec:74.4/90.1
+0020000402
+Test 1: Time 0.996s (it:2.075s) Data:0.118s (it:0.019s), Succ/Prec:67.9/84.9:  46%|██████████████████████████████████████████████▊                                                       | 55/120 [1:15:47<34:30, 31.85s/it]Succ/Prec:67.9/84.9
+0020000381
+Test 1: Time 0.996s (it:0.732s) Data:0.117s (it:0.021s), Succ/Prec:77.0/87.0:  47%|███████████████████████████████████████████████▌                                                      | 56/120 [1:15:58<27:24, 25.70s/it]Succ/Prec:77.0/87.0
+0020000418
+0020000419
+Test 1: Time 0.994s (it:2.497s) Data:0.115s (it:0.023s), Succ/Prec:62.4/78.5:  48%|████████████████████████████████████████████████▍                                                     | 57/120 [1:16:23<26:45, 25.49s/it]Succ/Prec:62.4/78.5
+0020000394
+Test 1: Time 0.993s (it:0.862s) Data:0.113s (it:0.017s), Succ/Prec:78.1/89.8:  48%|█████████████████████████████████████████████████▎                                                    | 58/120 [1:16:40<23:36, 22.85s/it]Succ/Prec:78.1/89.8
+0020000399
+0020000416
+0020000417
+Test 1: Time 0.991s (it:0.777s) Data:0.112s (it:0.030s), Succ/Prec:69.5/85.2:  49%|██████████████████████████████████████████████████▏                                                   | 59/120 [1:17:10<25:27, 25.04s/it]Succ/Prec:69.5/85.2
+0020000399
+0020000408
+0020000409
+Test 1: Time 0.991s (it:2.222s) Data:0.111s (it:0.054s), Succ/Prec:72.7/86.5:  50%|███████████████████████████████████████████████████                                                   | 60/120 [1:17:22<21:03, 21.06s/it]Succ/Prec:72.7/86.5
+Test 1: Time 0.991s (it:0.827s) Data:0.109s (it:0.019s), Succ/Prec:79.3/93.6:  51%|███████████████████████████████████████████████████▊                                                  | 61/120 [1:17:28<16:10, 16.46s/it]Succ/Prec:79.3/93.6
+0020000417
+Test 1: Time 0.990s (it:2.215s) Data:0.108s (it:0.013s), Succ/Prec:67.3/81.0:  52%|████████████████████████████████████████████████████▋                                                 | 62/120 [1:17:38<14:03, 14.54s/it]Succ/Prec:67.3/81.0
+0020000432
+Test 1: Time 0.990s (it:2.574s) Data:0.106s (it:0.019s), Succ/Prec:71.5/89.6:  52%|█████████████████████████████████████████████████████▌                                                | 63/120 [1:17:57<15:12, 16.02s/it]Succ/Prec:71.5/89.6
+0020000412
+0020000431
+Test 1: Time 0.989s (it:2.106s) Data:0.105s (it:0.033s), Succ/Prec:58.3/80.7:  53%|██████████████████████████████████████████████████████▍                                               | 64/120 [1:18:13<14:46, 15.84s/it]Succ/Prec:58.3/80.7
+Test 1: Time 0.987s (it:1.360s) Data:0.104s (it:0.012s), Succ/Prec:66.9/86.9:  54%|███████████████████████████████████████████████████████▏                                              | 65/120 [1:18:38<17:13, 18.78s/it]Succ/Prec:66.9/86.9
+0020000414
+0020000415
+Test 1: Time 0.987s (it:0.738s) Data:0.103s (it:0.046s), Succ/Prec:75.2/84.7:  55%|████████████████████████████████████████████████████████                                              | 66/120 [1:18:47<14:18, 15.90s/it]Succ/Prec:75.2/84.7
+0020000418
+0020000432
+0020000436
+0020000437
+Test 1: Time 0.987s (it:2.148s) Data:0.102s (it:0.017s), Succ/Prec:59.3/78.8:  56%|████████████████████████████████████████████████████████▉                                             | 67/120 [1:19:10<15:45, 17.84s/it]Succ/Prec:59.3/78.8
+Test 1: Time 0.986s (it:0.843s) Data:0.100s (it:0.013s), Succ/Prec:75.3/92.1:  57%|█████████████████████████████████████████████████████████▊                                            | 68/120 [1:19:22<14:06, 16.28s/it]Succ/Prec:75.3/92.1
+0020000429
+0020000430
+0020000431
+0020000432
+0020000434
+0020000437
+0020000438
+0020000439
+0020000440
+0020000441
+0020000442
+0020000443
+0020000444
+0020000445
+0020000446
+0020000447
+0020000448
+0020000449
+0020000450
+0020000451
+0020000452
+0020000453
+0020000454
+0020000455
+0020000456
+0020000457
+0020000458
+0020000459
+0020000460
+0020000461
+0020000462
+0020000463
+0020000464
+0020000465
+0020000466
+0020000467
+Test 1: Time 0.994s (it:2.054s) Data:0.099s (it:0.024s), Succ/Prec:12.8/18.4:  57%|██████████████████████████████████████████████████████████▋                                           | 69/120 [1:20:39<29:18, 34.49s/it]Succ/Prec:12.8/18.4
+0020000431
+0020000432
+0020000449
+Test 1: Time 0.993s (it:0.655s) Data:0.098s (it:0.022s), Succ/Prec:67.6/83.1:  58%|███████████████████████████████████████████████████████████▌                                          | 70/120 [1:20:57<24:38, 29.56s/it]Succ/Prec:67.6/83.1
+Test 1: Time 0.992s (it:0.759s) Data:0.097s (it:0.013s), Succ/Prec:71.8/87.6:  59%|████████████████████████████████████████████████████████████▎                                         | 71/120 [1:21:10<20:00, 24.50s/it]Succ/Prec:71.8/87.6
+0020000438
+0020000442
+Test 1: Time 0.992s (it:0.813s) Data:0.096s (it:0.025s), Succ/Prec:73.7/81.7:  60%|█████████████████████████████████████████████████████████████▏                                        | 72/120 [1:21:24<16:58, 21.21s/it]Succ/Prec:73.7/81.7
+0020000440
+0020000442
+0020000447
+0020000448
+Test 1: Time 0.990s (it:1.030s) Data:0.095s (it:0.027s), Succ/Prec:66.9/84.9:  61%|██████████████████████████████████████████████████████████████                                        | 73/120 [1:21:54<18:40, 23.84s/it]Succ/Prec:66.9/84.9
+0020000456
+0020000462
+Test 1: Time 0.990s (it:0.783s) Data:0.094s (it:0.049s), Succ/Prec:61.6/86.8:  62%|██████████████████████████████████████████████████████████████▉                                       | 74/120 [1:22:10<16:31, 21.55s/it]Succ/Prec:61.6/86.8
+Test 1: Time 0.989s (it:1.024s) Data:0.094s (it:0.028s), Succ/Prec:77.2/88.3:  62%|███████████████████████████████████████████████████████████████▊                                      | 75/120 [1:22:16<12:42, 16.94s/it]Succ/Prec:77.2/88.3
+Test 1: Time 0.988s (it:1.309s) Data:0.093s (it:0.016s), Succ/Prec:69.8/88.5:  63%|████████████████████████████████████████████████████████████████▌                                     | 76/120 [1:22:36<13:05, 17.85s/it]Succ/Prec:69.8/88.5
+Test 1: Time 0.988s (it:1.309s) Data:0.093s (it:0.016s), Succ/Prec:69.8/88.5:  64%|█████████████████████████████████████████████████████████████████▍                                    | 77/120 [1:22:37<09:11, 12.82s/it]Succ/Prec:86.2/96.2
+Test 1: Time 0.987s (it:0.830s) Data:0.091s (it:0.003s), Succ/Prec:79.4/91.1:  65%|██████████████████████████████████████████████████████████████████▎                                   | 78/120 [1:22:51<09:16, 13.25s/it]Succ/Prec:79.4/91.1
+0020000461
+Test 1: Time 0.985s (it:1.481s) Data:0.090s (it:0.029s), Succ/Prec:69.7/90.8:  66%|███████████████████████████████████████████████████████████████████▏                                  | 79/120 [1:23:15<11:16, 16.50s/it]Succ/Prec:69.7/90.8
+Test 1: Time 0.985s (it:1.225s) Data:0.089s (it:0.042s), Succ/Prec:73.8/93.8:  67%|████████████████████████████████████████████████████████████████████                                  | 80/120 [1:23:17<07:58, 11.96s/it]Succ/Prec:73.8/93.8
+0020000472
+0020000479
+0020000480
+0020000481
+0020000482
+Test 1: Time 0.986s (it:0.639s) Data:0.088s (it:0.003s), Succ/Prec:43.4/55.0:  68%|████████████████████████████████████████████████████████████████████▊                                 | 81/120 [1:23:33<08:32, 13.14s/it]Succ/Prec:43.4/55.0
+0020000482
+Test 1: Time 0.985s (it:2.204s) Data:0.087s (it:0.009s), Succ/Prec:70.9/83.2:  68%|█████████████████████████████████████████████████████████████████████▋                                | 82/120 [1:23:42<07:34, 11.97s/it]Succ/Prec:70.9/83.2
+0020000474
+0020000476
+Test 1: Time 0.985s (it:1.186s) Data:0.086s (it:0.018s), Succ/Prec:71.3/81.8:  69%|██████████████████████████████████████████████████████████████████████▌                               | 83/120 [1:24:05<09:26, 15.30s/it]Succ/Prec:71.3/81.8
+0020000486
+Test 1: Time 0.985s (it:0.782s) Data:0.086s (it:0.033s), Succ/Prec:67.0/80.5:  70%|███████████████████████████████████████████████████████████████████████▍                              | 84/120 [1:24:17<08:36, 14.34s/it]Succ/Prec:67.0/80.5
+0020000483
+0020000484
+0020000485
+0020000486
+0020000487
+0020000489
+0020000490
+0020000491
+0020000492
+0020000493
+0020000494
+0020000495
+0020000496
+0020000497
+0020000498
+0020000507
+0020000515
+0020000518
+Test 1: Time 0.987s (it:1.975s) Data:0.085s (it:0.024s), Succ/Prec:8.1/6.8:  71%|█████████████████████████████████████████████████████████████████████████▋                              | 85/120 [1:25:06<14:20, 24.59s/it]Succ/Prec:8.1/6.8
+0020000488
+0020000489
+0020000490
+0020000491
+0020000492
+0020000493
+Test 1: Time 0.988s (it:0.640s) Data:0.084s (it:0.021s), Succ/Prec:37.7/49.6:  72%|█████████████████████████████████████████████████████████████████████████                             | 86/120 [1:25:24<12:54, 22.77s/it]Succ/Prec:37.7/49.6
+0020000487
+0020000495
+Test 1: Time 0.988s (it:2.092s) Data:0.083s (it:0.008s), Succ/Prec:60.9/75.5:  72%|█████████████████████████████████████████████████████████████████████████▉                            | 87/120 [1:25:35<10:31, 19.14s/it]Succ/Prec:60.9/75.5
+0020000489
+0020000490
+0020000491
+0020000496
+Test 1: Time 0.987s (it:2.457s) Data:0.083s (it:0.008s), Succ/Prec:70.5/85.2:  73%|██████████████████████████████████████████████████████████████████████████▊                           | 88/120 [1:26:12<13:04, 24.52s/it]Succ/Prec:70.5/85.2
+0020000500
+0020000504
+0020000506
+0020000507
+0020000508
+0020000509
+0020000510
+0020000511
+0020000512
+0020000513
+0020000515
+0020000516
+0020000517
+0020000518
+0020000520
+0020000521
+0020000522
+0020000523
+0020000524
+Test 1: Time 0.990s (it:0.631s) Data:0.082s (it:0.023s), Succ/Prec:20.2/27.5:  74%|███████████████████████████████████████████████████████████████████████████▋                          | 89/120 [1:26:57<15:49, 30.62s/it]Succ/Prec:20.2/27.5
+0020000503
+Test 1: Time 0.990s (it:0.788s) Data:0.081s (it:0.015s), Succ/Prec:75.5/90.5:  75%|████████████████████████████████████████████████████████████████████████████▌                         | 90/120 [1:27:06<12:03, 24.12s/it]Succ/Prec:75.5/90.5
+0020000507
+0020000515
+0020000518
+0020000553
+Test 1: Time 0.989s (it:1.234s) Data:0.080s (it:0.018s), Succ/Prec:67.5/83.8:  76%|█████████████████████████████████████████████████████████████████████████████▎                        | 91/120 [1:27:52<14:56, 30.91s/it]Succ/Prec:67.5/83.8
+0020000512
+0020000513
+0020000514
+0020000515
+0020000523
+Test 1: Time 0.989s (it:2.147s) Data:0.080s (it:0.068s), Succ/Prec:60.2/72.4:  77%|██████████████████████████████████████████████████████████████████████████████▏                       | 92/120 [1:28:13<13:00, 27.86s/it]Succ/Prec:60.2/72.4
+0020000514
+Test 1: Time 0.989s (it:2.073s) Data:0.080s (it:0.012s), Succ/Prec:69.0/85.0:  78%|███████████████████████████████████████████████████████████████████████████████                       | 93/120 [1:28:18<09:28, 21.07s/it]Succ/Prec:69.0/85.0
+0020000524
+0020000536
+0020000537
+Test 1: Time 0.990s (it:2.338s) Data:0.079s (it:0.011s), Succ/Prec:66.7/85.5:  78%|███████████████████████████████████████████████████████████████████████████████▉                      | 94/120 [1:28:38<08:58, 20.70s/it]Succ/Prec:66.7/85.5
+0020000524
+0020000525
+0020000526
+0020000527
+0020000528
+0020000529
+0020000530
+0020000531
+0020000532
+0020000533
+0020000534
+0020000535
+0020000536
+0020000537
+0020000538
+0020000539
+0020000540
+Test 1: Time 0.992s (it:0.741s) Data:0.078s (it:0.024s), Succ/Prec:26.5/26.8:  79%|████████████████████████████████████████████████████████████████████████████████▊                     | 95/120 [1:29:17<10:51, 26.06s/it]Succ/Prec:26.5/26.8
+0020000524
+Test 1: Time 0.991s (it:3.113s) Data:0.078s (it:0.033s), Succ/Prec:73.4/87.6:  80%|█████████████████████████████████████████████████████████████████████████████████▌                    | 96/120 [1:29:54<11:48, 29.53s/it]Succ/Prec:73.4/87.6
+0020000543
+0020000544
+0020000545
+0020000546
+0020000547
+0020000548
+0020000549
+0020000550
+0020000551
+0020000552
+0020000553
+0020000554
+0020000555
+0020000556
+0020000557
+0020000558
+0020000559
+0020000560
+0020000561
+0020000562
+0020000563
+0020000564
+Test 1: Time 0.995s (it:2.017s) Data:0.077s (it:0.024s), Succ/Prec:21.8/26.9:  81%|██████████████████████████████████████████████████████████████████████████████████▍                   | 97/120 [1:30:47<13:57, 36.40s/it]Succ/Prec:21.8/26.9
+0020000536
+0020000537
+0020000538
+0020000540
+0020000544
+Test 1: Time 0.994s (it:1.314s) Data:0.077s (it:0.018s), Succ/Prec:71.0/87.5:  82%|███████████████████████████████████████████████████████████████████████████████████▎                  | 98/120 [1:31:29<14:00, 38.22s/it]Succ/Prec:71.0/87.5
+0020000538
+Test 1: Time 0.991s (it:1.736s) Data:0.077s (it:0.064s), Succ/Prec:65.6/85.2:  82%|████████████████████████████████████████████████████████████████████████████████████▏                 | 99/120 [1:32:13<13:58, 39.95s/it]Succ/Prec:65.6/85.2
+0020000551
+0020000552
+Test 1: Time 0.991s (it:2.594s) Data:0.076s (it:0.030s), Succ/Prec:69.5/86.1:  83%|████████████████████████████████████████████████████████████████████████████████████▏                | 100/120 [1:32:29<10:54, 32.75s/it]Succ/Prec:69.5/86.1
+0020000544
+0020000552
+0020000553
+Test 1: Time 0.990s (it:0.718s) Data:0.076s (it:0.024s), Succ/Prec:53.1/72.4:  84%|█████████████████████████████████████████████████████████████████████████████████████                | 101/120 [1:32:52<09:26, 29.81s/it]Succ/Prec:53.1/72.4
+0020000550
+0020000559
+Test 1: Time 0.990s (it:0.653s) Data:0.075s (it:0.039s), Succ/Prec:66.0/86.9:  85%|█████████████████████████████████████████████████████████████████████████████████████▊               | 102/120 [1:33:16<08:21, 27.85s/it]Succ/Prec:66.0/86.9
+0020000552
+0020000553
+0020000554
+0020000555
+0020000556
+0020000557
+0020000558
+0020000559
+0020000560
+0020000561
+0020000562
+0020000563
+0020000564
+0020000565
+0020000566
+0020000567
+0020000568
+0020000569
+0020000570
+Test 1: Time 0.995s (it:2.295s) Data:0.075s (it:0.038s), Succ/Prec:44.6/71.6:  86%|██████████████████████████████████████████████████████████████████████████████████████▋              | 103/120 [1:34:06<09:51, 34.79s/it]Succ/Prec:44.6/71.6
+Test 1: Time 0.994s (it:0.873s) Data:0.074s (it:0.015s), Succ/Prec:78.4/91.6:  87%|███████████████████████████████████████████████████████████████████████████████████████▌             | 104/120 [1:34:31<08:26, 31.67s/it]Succ/Prec:78.4/91.6
+0020000589
+0020000600
+0020000603
+0020000605
+0020000606
+0020000607
+0020000608
+0020000609
+0020000610
+0020000611
+0020000612
+0020000613
+0020000614
+0020000615
+0020000616
+0020000617
+0020000618
+0020000619
+0020000620
+0020000621
+0020000622
+0020000623
+0020000624
+0020000625
+0020000626
+0020000627
+0020000628
+0020000629
+0020000630
+0020000631
+0020000632
+0020000633
+0020000637
+0020000638
+0020000639
+0020000640
+0020000641
+0020000643
+0020000644
+0020000645
+0020000648
+0020000649
+0020000650
+0020000651
+0020000652
+0020000653
+0020000656
+0020000657
+0020000658
+0020000659
+0020000660
+0020000661
+0020000662
+0020000663
+0020000664
+0020000665
+0020000666
+0020000667
+0020000668
+0020000669
+0020000670
+0020000671
+0020000672
+0020000673
+0020000674
+0020000675
+0020000676
+0020000677
+0020000678
+0020000679
+0020000680
+0020000681
+0020000682
+0020000683
+0020000684
+0020000685
+0020000686
+0020000687
+0020000688
+0020000689
+0020000690
+0020000691
+0020000692
+0020000693
+0020000694
+0020000695
+0020000696
+0020000697
+0020000698
+0020000699
+0020000700
+0020000701
+0020000702
+0020000703
+0020000704
+0020000705
+0020000706
+0020000707
+0020000708
+0020000709
+0020000710
+0020000711
+0020000712
+0020000713
+0020000714
+0020000715
+0020000716
+0020000717
+0020000718
+0020000719
+0020000720
+0020000721
+0020000722
+0020000723
+0020000724
+0020000725
+0020000726
+0020000727
+0020000728
+0020000729
+0020000730
+0020000731
+0020000732
+0020000734
+0020000735
+0020000736
+0020000738
+0020000739
+0020000740
+0020000741
+0020000742
+0020000743
+0020000744
+0020000745
+0020000746
+0020000747
+0020000748
+0020000749
+0020000750
+0020000751
+0020000752
+0020000753
+0020000754
+0020000755
+0020000756
+0020000757
+0020000758
+0020000760
+0020000761
+0020000762
+0020000763
+0020000764
+0020000765
+0020000766
+0020000767
+0020000768
+0020000769
+0020000770
+0020000771
+0020000774
+0020000775
+0020000776
+0020000777
+0020000778
+0020000779
+0020000780
+0020000781
+0020000782
+0020000783
+0020000784
+0020000785
+0020000786
+0020000787
+0020000788
+0020000789
+0020000790
+0020000791
+0020000792
+0020000793
+0020000794
+0020000795
+0020000800
+0020000805
+0020000811
+0020000816
+0020000835
+Test 1: Time 1.023s (it:0.637s) Data:0.074s (it:0.040s), Succ/Prec:9.1/11.2:  88%|████████████████████████████████████████████████████████████████████████████████████████▍            | 105/120 [1:41:53<38:43, 154.87s/it]Succ/Prec:9.1/11.2
+0020000572
+0020000573
+0020000574
+0020000575
+0020000576
+0020000579
+0020000583
+0020000585
+0020000593
+Test 1: Time 1.024s (it:2.009s) Data:0.074s (it:0.131s), Succ/Prec:7.4/4.3:  88%|██████████████████████████████████████████████████████████████████████████████████████████            | 106/120 [1:42:20<27:11, 116.52s/it]Succ/Prec:7.4/4.3
+0020000584
+0020000643
+0020000644
+0020000645
+0020000646
+0020000647
+0020000648
+0020000649
+0020000650
+0020000651
+0020000652
+0020000653
+0020000655
+0020000657
+0020000658
+0020000659
+0020000660
+0020000661
+0020000662
+0020000663
+0020000664
+0020000665
+0020000666
+0020000667
+0020000668
+0020000669
+0020000670
+0020000671
+0020000672
+0020000673
+0020000674
+0020000675
+0020000676
+0020000677
+0020000678
+0020000679
+0020000680
+0020000681
+0020000682
+0020000683
+0020000684
+0020000685
+0020000686
+0020000688
+0020000689
+0020000690
+0020000691
+0020000692
+0020000693
+0020000694
+0020000695
+0020000696
+0020000697
+0020000698
+0020000699
+0020000700
+0020000701
+0020000702
+0020000703
+0020000704
+0020000706
+0020000707
+0020000708
+0020000709
+0020000710
+0020000711
+0020000712
+0020000713
+0020000714
+0020000715
+0020000717
+0020000718
+0020000719
+0020000721
+0020000723
+0020000724
+0020000725
+0020000726
+0020000727
+0020000728
+0020000729
+0020000730
+0020000731
+0020000732
+0020000733
+0020000734
+0020000735
+0020000736
+0020000737
+0020000739
+0020000740
+0020000741
+0020000742
+0020000744
+0020000749
+0020000752
+0020000753
+0020000754
+0020000755
+0020000756
+0020000757
+0020000758
+0020000760
+0020000763
+0020000764
+0020000765
+0020000766
+0020000767
+0020000768
+0020000770
+0020000771
+0020000773
+0020000774
+0020000775
+0020000776
+0020000777
+0020000778
+0020000779
+0020000780
+0020000781
+0020000782
+0020000783
+0020000784
+0020000785
+0020000786
+0020000787
+0020000788
+0020000789
+0020000790
+0020000791
+0020000792
+0020000793
+0020000794
+0020000795
+0020000796
+0020000797
+0020000798
+0020000799
+0020000800
+0020000801
+0020000802
+0020000803
+0020000804
+0020000805
+0020000806
+0020000807
+0020000808
+0020000809
+0020000810
+0020000811
+0020000812
+0020000813
+0020000814
+0020000815
+0020000816
+0020000817
+0020000818
+0020000819
+0020000820
+0020000821
+0020000822
+0020000823
+0020000824
+0020000825
+0020000826
+0020000827
+0020000828
+0020000829
+0020000830
+0020000831
+0020000832
+0020000833
+0020000834
+0020000835
+0020000836
+Test 1: Time 1.052s (it:2.401s) Data:0.074s (it:0.014s), Succ/Prec:15.0/19.9:  89%|█████████████████████████████████████████████████████████████████████████████████████████▏          | 107/120 [1:49:38<46:05, 212.73s/it]Succ/Prec:15.0/19.9
+0020000596
+0020000597
+Test 1: Time 1.052s (it:3.172s) Data:0.075s (it:0.140s), Succ/Prec:55.2/78.2:  90%|██████████████████████████████████████████████████████████████████████████████████████████          | 108/120 [1:49:50<30:33, 152.79s/it]Succ/Prec:55.2/78.2
+0020000596
+Test 1: Time 1.051s (it:1.134s) Data:0.074s (it:0.017s), Succ/Prec:72.6/84.4:  91%|██████████████████████████████████████████████████████████████████████████████████████████▊         | 109/120 [1:50:10<20:39, 112.68s/it]Succ/Prec:72.6/84.4
+Test 1: Time 1.049s (it:0.780s) Data:0.074s (it:0.035s), Succ/Prec:68.4/87.1:  92%|████████████████████████████████████████████████████████████████████████████████████████████▌        | 110/120 [1:50:29<14:08, 84.86s/it]Succ/Prec:68.4/87.1
+Test 1: Time 1.049s (it:0.631s) Data:0.073s (it:0.040s), Succ/Prec:68.3/90.0:  92%|█████████████████████████████████████████████████████████████████████████████████████████████▍       | 111/120 [1:50:31<08:59, 59.95s/it]Succ/Prec:68.3/90.0
+Test 1: Time 1.049s (it:0.008s) Data:0.073s (it:0.004s), Succ/Prec:100.0/100.0:  93%|████████████████████████████████████████████████████████████████████████████████████████████▍      | 112/120 [1:50:31<07:59, 59.95s/it]Succ/Prec:100.0/100.0
+Test 1: Time 1.049s (it:0.733s) Data:0.072s (it:0.002s), Succ/Prec:78.4/89.1:  94%|███████████████████████████████████████████████████████████████████████████████████████████████      | 113/120 [1:50:37<04:59, 42.77s/it]Succ/Prec:78.4/89.1
+Test 1: Time 1.048s (it:0.892s) Data:0.072s (it:0.014s), Succ/Prec:71.3/88.8:  95%|███████████████████████████████████████████████████████████████████████████████████████████████▉     | 114/120 [1:50:38<03:01, 30.21s/it]Succ/Prec:71.3/88.8
+0020000617
+0020000623
+Test 1: Time 1.048s (it:1.974s) Data:0.071s (it:0.003s), Succ/Prec:70.3/87.8:  96%|████████████████████████████████████████████████████████████████████████████████████████████████▊    | 115/120 [1:50:45<01:56, 23.37s/it]Succ/Prec:70.3/87.8
+0020000620
+0020000622
+0020000623
+0020000624
+0020000625
+0020000626
+0020000628
+0020000629
+0020000630
+0020000632
+0020000633
+0020000634
+0020000635
+0020000636
+Test 1: Time 1.050s (it:1.907s) Data:0.070s (it:0.006s), Succ/Prec:15.3/15.0:  97%|█████████████████████████████████████████████████████████████████████████████████████████████████▋   | 116/120 [1:51:15<01:41, 25.47s/it]Succ/Prec:15.3/15.0
+Test 1: Time 1.050s (it:0.724s) Data:0.070s (it:0.011s), Succ/Prec:63.1/91.9:  98%|██████████████████████████████████████████████████████████████████████████████████████████████████▍  | 117/120 [1:51:18<00:55, 18.66s/it]Succ/Prec:63.1/91.9
+0020000622
+0020000623
+Test 1: Time 1.050s (it:2.033s) Data:0.069s (it:0.004s), Succ/Prec:50.6/63.1:  98%|███████████████████████████████████████████████████████████████████████████████████████████████████▎ | 118/120 [1:51:24<00:29, 14.99s/it]Succ/Prec:50.6/63.1
+Test 1: Time 1.049s (it:0.630s) Data:0.069s (it:0.004s), Succ/Prec:59.2/82.7:  99%|████████████████████████████████████████████████████████████████████████████████████████████████████▏| 119/120 [1:51:32<00:12, 12.76s/it]Succ/Prec:59.2/82.7
+0020000736
+0020000756
+0020000757
+0020000758
+0020000759
+0020000760
+0020000761
+0020000762
+0020000763
+0020000764
+Test 1: Time 1.049s (it:0.621s) Data:0.068s (it:0.009s), Succ/Prec:36.1/54.9: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 120/120 [1:52:06<00:00, 19.20s/it]Succ/Prec:36.1/54.9
+2019-11-27 01:55:00,628 [MainThread  ] [INFO ]  Succ/Prec:58.4/73.4
+2019-11-27 01:55:02,196 [MainThread  ] [INFO ]  mean Succ/Prec 58.44402868724665/73.37932647333957
+2019-11-27 01:55:02,198 [MainThread  ] [INFO ]  ---- EPOCH 2 JOINT EVALUATION ----
+2019-11-27 01:55:02,198 [MainThread  ] [INFO ]  ==> Output file: ../output/siamese/default/eval/epoch_no_number/rpnpred64
+
+eval:   0%|                                                                                                                                                                                         | 0/120 [00:00<?, ?it/s]
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/home/fengzicai/anaconda3/envs/pytorch_1_1_0/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/home/fengzicai/anaconda3/envs/pytorch_1_1_0/lib/python3.6/site-packages/tqdm/_monitor.py", line 62, in run
+    for instance in self.tqdm_cls._instances:
+  File "/home/fengzicai/anaconda3/envs/pytorch_1_1_0/lib/python3.6/_weakrefset.py", line 60, in __iter__
+    for itemref in self.data:
+RuntimeError: Set changed size during iteration
+
+0019000007
+Test 2: Time 8.285s (it:10.836s) Data:3.198s (it:3.198s), Succ/Prec:80.3/91.6:   1%|▊                                                                                                     | 1/120 [01:06<2:11:04, 66.09s/it]Succ/Prec:80.3/91.6
+0019000085
+0019000086
+0019000087
+0019000088
+0019000089
+Test 2: Time 2.218s (it:5.994s) Data:1.602s (it:0.007s), Succ/Prec:72.8/87.1:   2%|█▋                                                                                                     | 2/120 [02:44<2:28:43, 75.62s/it]Succ/Prec:72.8/87.1
+0019000430
+Test 2: Time 1.231s (it:10.750s) Data:1.096s (it:0.084s), Succ/Prec:72.2/88.0:   2%|██▌                                                                                                  | 3/120 [06:21<3:50:24, 118.16s/it]Succ/Prec:72.2/88.0
+0019000478
+0019000786
+0019000788
+0019000789
+0019000790
+0019000791
+Test 2: Time 1.074s (it:14.210s) Data:0.851s (it:0.115s), Succ/Prec:57.6/79.8:   3%|███▎                                                                                                 | 4/120 [11:10<5:27:49, 169.57s/it]Succ/Prec:57.6/79.8
+0019000554
+0019000555
+0019000557
+0019000558
+0019000559
+0019000560
+0019000561
+0019000562
+0019000563
+0019000564
+0019000565
+0019000566
+0019000567
+0019000568
+0019000569
+0019000570
+0019000571
+0019000720
+0019000722
+0019000723
+0019000724
+0019000725
+Test 2: Time 1.106s (it:6.448s) Data:0.711s (it:0.154s), Succ/Prec:59.8/79.1:   4%|████▎                                                                                                 | 5/120 [14:41<5:48:22, 181.76s/it]Succ/Prec:59.8/79.1
+Test 2: Time 1.118s (it:0.865s) Data:0.607s (it:0.085s), Succ/Prec:68.4/85.1:   5%|█████                                                                                                 | 6/120 [15:31<4:30:41, 142.47s/it]Succ/Prec:68.4/85.1
+Test 2: Time 1.098s (it:0.875s) Data:0.527s (it:0.049s), Succ/Prec:66.7/88.3:   6%|█████▉                                                                                                | 7/120 [16:52<3:53:23, 123.93s/it]Succ/Prec:66.7/88.3
+0020000183
+Test 2: Time 1.048s (it:0.689s) Data:0.475s (it:0.107s), Succ/Prec:70.4/88.1:   7%|██████▊                                                                                               | 8/120 [19:36<4:13:50, 135.98s/it]Succ/Prec:70.4/88.1
+0020000001
+Test 2: Time 1.049s (it:0.879s) Data:0.433s (it:0.098s), Succ/Prec:70.1/87.4:   8%|███████▋                                                                                              | 9/120 [19:56<3:07:17, 101.24s/it]Succ/Prec:70.1/87.4
+Test 2: Time 1.041s (it:1.181s) Data:0.392s (it:0.026s), Succ/Prec:78.2/91.1:   8%|████████▌                                                                                             | 10/120 [20:44<2:36:17, 85.25s/it]Succ/Prec:78.2/91.1
+Test 2: Time 1.064s (it:5.833s) Data:0.362s (it:0.061s), Succ/Prec:79.9/92.7:   9%|█████████▎                                                                                            | 11/120 [22:27<2:44:21, 90.47s/it]Succ/Prec:79.9/92.7
+0020000097
+Test 2: Time 1.059s (it:7.286s) Data:0.335s (it:0.037s), Succ/Prec:79.8/90.8:  10%|██████████▏                                                                                           | 12/120 [24:05<2:46:44, 92.63s/it]Succ/Prec:79.8/90.8
+0020000094
+0020000123
+0020000139
+0020000142
+0020000143
+0020000144
+0020000145
+0020000146
+0020000147
+0020000148
+0020000149
+0020000150
+Test 2: Time 1.033s (it:1.962s) Data:0.313s (it:0.050s), Succ/Prec:71.8/87.3:  11%|██████████▉                                                                                          | 13/120 [26:05<3:00:08, 101.02s/it]Succ/Prec:71.8/87.3
+0020000119
+Test 2: Time 1.023s (it:2.153s) Data:0.296s (it:0.074s), Succ/Prec:69.3/84.9:  12%|███████████▊                                                                                         | 14/120 [27:57<3:03:55, 104.10s/it]Succ/Prec:69.3/84.9
+0020000036
+0020000077
+0020000078
+0020000079
+0020000080
+0020000081
+Test 2: Time 1.012s (it:0.780s) Data:0.280s (it:0.062s), Succ/Prec:58.8/80.3:  12%|████████████▋                                                                                        | 15/120 [29:30<2:56:47, 101.02s/it]Succ/Prec:58.8/80.3
+0020000001
+0020000018
+0020000020
+0020000021
+0020000022
+0020000023
+0020000024
+0020000025
+0020000026
+0020000028
+0020000029
+0020000031
+0020000032
+0020000033
+0020000034
+0020000035
+0020000036
+0020000037
+0020000038
+0020000039
+0020000040
+0020000041
+0020000042
+0020000043
+0020000044
+0020000045
+0020000046
+0020000049
+0020000051
+0020000052
+0020000053
+0020000054
+0020000060
+0020000064
+0020000067
+0020000068
+0020000069
+0020000071
+0020000072
+0020000080
+Test 2: Time 1.007s (it:1.005s) Data:0.271s (it:0.129s), Succ/Prec:58.6/78.0:  13%|█████████████▍                                                                                       | 16/120 [32:29<3:35:35, 124.38s/it]Succ/Prec:58.6/78.0
+0020000032
+0020000039
+0020000040
+0020000047
+0020000057
+0020000065
+Test 2: Time 0.976s (it:1.811s) Data:0.264s (it:0.151s), Succ/Prec:71.3/85.1:  14%|██████████████▎                                                                                      | 17/120 [35:16<3:55:18, 137.07s/it]Succ/Prec:71.3/85.1
+0020000001
+0020000002
+0020000009
+0020000011
+0020000017
+0020000019
+0020000020
+0020000021
+0020000025
+0020000029
+0020000031
+0020000033
+0020000034
+0020000035
+0020000037
+0020000050
+0020000067
+0020000070
+0020000071
+0020000072
+0020000073
+0020000074
+0020000075
+0020000076
+0020000077
+0020000078
+0020000079
+0020000080
+0020000081
+0020000082
+0020000083
+0020000084
+0020000085
+0020000086
+0020000087
+0020000088
+0020000089
+0020000090
+Test 2: Time 0.989s (it:1.993s) Data:0.258s (it:0.163s), Succ/Prec:58.7/84.2:  15%|███████████████▏                                                                                     | 18/120 [37:14<3:43:07, 131.25s/it]Succ/Prec:58.7/84.2
+0020000005
+0020000018
+0020000019
+0020000023
+0020000027
+0020000028
+0020000029
+0020000030
+0020000031
+0020000032
+0020000033
+0020000034
+0020000035
+0020000036
+0020000037
+0020000038
+0020000039
+0020000040
+0020000041
+0020000042
+0020000043
+0020000044
+0020000045
+Test 2: Time 0.996s (it:1.990s) Data:0.247s (it:0.046s), Succ/Prec:38.4/52.0:  16%|███████████████▉                                                                                     | 19/120 [38:16<3:06:10, 110.59s/it]Succ/Prec:38.4/52.0
+0020000041
+0020000042
+0020000045
+0020000047
+0020000048
+0020000049
+0020000051
+0020000052
+0020000054
+0020000055
+0020000056
+0020000057
+0020000058
+0020000059
+0020000060
+0020000061
+0020000062
+0020000063
+0020000064
+0020000065
+0020000066
+Test 2: Time 0.992s (it:0.968s) Data:0.236s (it:0.025s), Succ/Prec:53.8/73.5:  17%|████████████████▊                                                                                    | 20/120 [40:25<3:13:30, 116.10s/it]Succ/Prec:53.8/73.5
+0020000088
+0020000089
+Test 2: Time 0.992s (it:3.847s) Data:0.232s (it:0.143s), Succ/Prec:63.4/81.8:  18%|█████████████████▊                                                                                    | 21/120 [41:14<2:38:14, 95.91s/it]Succ/Prec:63.4/81.8
+0020000073
+0020000074
+0020000075
+0020000077
+0020000078
+0020000079
+0020000081
+0020000085
+0020000086
+0020000087
+0020000089
+0020000091
+0020000092
+0020000098
+0020000101
+0020000108
+0020000111
+0020000115
+0020000127
+Test 2: Time 0.987s (it:0.801s) Data:0.224s (it:0.065s), Succ/Prec:63.1/85.9:  18%|██████████████████▌                                                                                  | 22/120 [43:03<2:43:24, 100.04s/it]Succ/Prec:63.1/85.9
+Test 2: Time 0.983s (it:2.096s) Data:0.220s (it:0.134s), Succ/Prec:80.8/91.5:  19%|███████████████████▌                                                                                  | 23/120 [44:24<2:32:29, 94.32s/it]Succ/Prec:80.8/91.5
+0020000100
+0020000101
+0020000102
+0020000105
+0020000106
+0020000108
+0020000115
+0020000117
+0020000126
+0020000130
+0020000170
+0020000201
+0020000202
+Test 2: Time 0.989s (it:2.206s) Data:0.213s (it:0.048s), Succ/Prec:58.2/81.1:  20%|████████████████████▏                                                                                | 24/120 [46:25<2:43:30, 102.19s/it]Succ/Prec:58.2/81.1
+0020000128
+0020000131
+0020000132
+0020000133
+0020000134
+0020000135
+0020000136
+0020000142
+0020000152
+Test 2: Time 0.984s (it:0.814s) Data:0.206s (it:0.052s), Succ/Prec:63.0/86.0:  21%|█████████████████████▎                                                                                | 25/120 [47:44<2:30:54, 95.31s/it]Succ/Prec:63.0/86.0
+0020000153
+0020000788
+0020000794
+Test 2: Time 1.015s (it:2.133s) Data:0.203s (it:0.116s), Succ/Prec:73.8/88.0:  22%|█████████████████████▍                                                                             | 26/120 [1:00:06<7:33:08, 289.24s/it]Succ/Prec:73.8/88.0
+0020000171
+0020000172
+0020000173
+0020000174
+0020000175
+0020000177
+0020000178
+0020000179
+0020000180
+0020000182
+0020000183
+0020000184
+0020000185
+0020000186
+0020000187
+0020000189
+0020000190
+0020000192
+0020000193
+0020000194
+0020000195
+0020000196
+0020000197
+0020000198
+0020000199
+0020000200
+0020000201
+0020000202
+0020000203
+0020000204
+0020000205
+0020000206
+0020000208
+0020000209
+0020000210
+0020000211
+0020000212
+0020000213
+0020000214
+0020000215
+0020000216
+0020000217
+0020000218
+0020000219
+0020000220
+0020000222
+0020000224
+0020000227
+Test 2: Time 1.027s (it:0.629s) Data:0.207s (it:0.309s), Succ/Prec:7.2/8.4:  22%|██████████████████████▋                                                                              | 27/120 [1:01:55<6:04:22, 235.08s/it]Succ/Prec:7.2/8.4
+0020000186
+Test 2: Time 1.025s (it:0.828s) Data:0.201s (it:0.033s), Succ/Prec:64.8/83.5:  23%|███████████████████████                                                                            | 28/120 [1:02:22<4:24:42, 172.63s/it]Succ/Prec:64.8/83.5
+0020000203
+0020000205
+0020000206
+0020000207
+0020000208
+0020000209
+0020000211
+0020000212
+0020000213
+0020000214
+0020000215
+0020000216
+0020000217
+0020000218
+0020000219
+0020000222
+0020000223
+0020000224
+0020000225
+0020000226
+0020000227
+0020000228
+0020000229
+0020000230
+0020000231
+Test 2: Time 1.030s (it:2.022s) Data:0.195s (it:0.046s), Succ/Prec:22.2/30.7:  24%|███████████████████████▉                                                                           | 29/120 [1:03:23<3:31:26, 139.42s/it]Succ/Prec:22.2/30.7
+0020000206
+0020000209
+Test 2: Time 1.028s (it:1.758s) Data:0.190s (it:0.023s), Succ/Prec:69.7/85.4:  25%|████████████████████████▊                                                                          | 30/120 [1:03:58<2:42:01, 108.02s/it]Succ/Prec:69.7/85.4
+0020000222
+0020000223
+0020000229
+0020000231
+Test 2: Time 1.028s (it:0.638s) Data:0.185s (it:0.051s), Succ/Prec:60.9/83.2:  26%|█████████████████████████▊                                                                          | 31/120 [1:04:15<1:59:26, 80.52s/it]Succ/Prec:60.9/83.2
+0020000240
+Test 2: Time 1.027s (it:2.469s) Data:0.180s (it:0.011s), Succ/Prec:72.9/88.2:  27%|██████████████████████████▋                                                                         | 32/120 [1:04:30<1:29:16, 60.87s/it]Succ/Prec:72.9/88.2
+0020000226
+Test 2: Time 1.026s (it:0.752s) Data:0.175s (it:0.025s), Succ/Prec:54.2/77.6:  28%|███████████████████████████▌                                                                        | 33/120 [1:04:43<1:07:39, 46.66s/it]Succ/Prec:54.2/77.6
+0020000224
+0020000225
+0020000228
+0020000229
+0020000230
+0020000232
+0020000234
+0020000237
+0020000242
+0020000243
+0020000244
+0020000250
+0020000253
+0020000254
+0020000255
+Test 2: Time 1.028s (it:0.639s) Data:0.171s (it:0.028s), Succ/Prec:5.4/2.9:  28%|████████████████████████████▉                                                                         | 34/120 [1:05:26<1:05:13, 45.50s/it]Succ/Prec:5.4/2.9
+Test 2: Time 1.027s (it:0.644s) Data:0.166s (it:0.019s), Succ/Prec:62.9/78.6:  29%|█████████████████████████████▊                                                                        | 35/120 [1:05:31<47:10, 33.30s/it]Succ/Prec:62.9/78.6
+Test 2: Time 1.026s (it:1.085s) Data:0.162s (it:0.006s), Succ/Prec:71.8/88.2:  30%|██████████████████████████████▌                                                                       | 36/120 [1:05:46<38:58, 27.84s/it]Succ/Prec:71.8/88.2
+0020000266
+0020000272
+0020000273
+0020000274
+0020000275
+0020000276
+0020000277
+0020000278
+0020000279
+0020000280
+Test 2: Time 1.028s (it:1.974s) Data:0.158s (it:0.028s), Succ/Prec:33.9/40.8:  31%|███████████████████████████████▍                                                                      | 37/120 [1:06:09<36:26, 26.34s/it]Succ/Prec:33.9/40.8
+Test 2: Time 1.028s (it:2.424s) Data:0.154s (it:0.010s), Succ/Prec:68.0/85.6:  32%|████████████████████████████████▎                                                                     | 38/120 [1:06:45<40:04, 29.33s/it]Succ/Prec:68.0/85.6
+Test 2: Time 1.027s (it:0.985s) Data:0.151s (it:0.024s), Succ/Prec:72.1/80.4:  32%|█████████████████████████████████▏                                                                    | 39/120 [1:06:50<29:46, 22.06s/it]Succ/Prec:72.1/80.4
+Test 2: Time 1.027s (it:0.642s) Data:0.148s (it:0.012s), Succ/Prec:67.7/84.8:  33%|██████████████████████████████████                                                                    | 40/120 [1:07:06<26:50, 20.13s/it]Succ/Prec:67.7/84.8
+0020000286
+Test 2: Time 1.026s (it:0.632s) Data:0.144s (it:0.010s), Succ/Prec:59.7/80.0:  34%|██████████████████████████████████▊                                                                   | 41/120 [1:07:17<23:05, 17.54s/it]Succ/Prec:59.7/80.0
+0020000289
+0020000294
+0020000306
+0020000308
+0020000312
+0020000313
+0020000318
+Test 2: Time 1.022s (it:0.644s) Data:0.141s (it:0.011s), Succ/Prec:5.1/3.2:  35%|████████████████████████████████████▍                                                                   | 42/120 [1:08:14<38:04, 29.29s/it]Succ/Prec:5.1/3.2
+0020000293
+Test 2: Time 1.022s (it:1.018s) Data:0.139s (it:0.036s), Succ/Prec:67.7/87.7:  36%|████████████████████████████████████▌                                                                 | 43/120 [1:08:26<31:05, 24.23s/it]Succ/Prec:67.7/87.7
+Test 2: Time 1.019s (it:0.950s) Data:0.136s (it:0.017s), Succ/Prec:71.5/83.7:  37%|█████████████████████████████████████▍                                                                | 44/120 [1:09:06<36:32, 28.85s/it]Succ/Prec:71.5/83.7
+Test 2: Time 1.015s (it:0.630s) Data:0.134s (it:0.065s), Succ/Prec:32.5/39.8:  38%|██████████████████████████████████████▎                                                               | 45/120 [1:09:51<42:03, 33.65s/it]Succ/Prec:32.5/39.8
+0020000352
+Test 2: Time 1.011s (it:0.844s) Data:0.132s (it:0.031s), Succ/Prec:68.6/83.9:  38%|███████████████████████████████████████                                                               | 46/120 [1:10:33<44:46, 36.31s/it]Succ/Prec:68.6/83.9
+0020000331
+0020000402
+0020000403
+Test 2: Time 1.006s (it:2.878s) Data:0.131s (it:0.073s), Succ/Prec:67.3/83.5:  39%|███████████████████████████████████████▉                                                              | 47/120 [1:11:30<51:35, 42.41s/it]Succ/Prec:67.3/83.5
+0020000371
+Test 2: Time 1.005s (it:2.829s) Data:0.130s (it:0.094s), Succ/Prec:73.8/86.5:  40%|████████████████████████████████████████▊                                                             | 48/120 [1:12:01<46:39, 38.88s/it]Succ/Prec:73.8/86.5
+Test 2: Time 1.005s (it:1.039s) Data:0.128s (it:0.041s), Succ/Prec:67.9/87.9:  41%|█████████████████████████████████████████▋                                                            | 49/120 [1:12:09<35:10, 29.73s/it]Succ/Prec:67.9/87.9
+0020000351
+Test 2: Time 1.004s (it:0.628s) Data:0.126s (it:0.013s), Succ/Prec:66.9/84.5:  42%|██████████████████████████████████████████▌                                                           | 50/120 [1:12:33<32:46, 28.09s/it]Succ/Prec:66.9/84.5
+0020000359
+0020000421
+Test 2: Time 1.001s (it:6.098s) Data:0.124s (it:0.017s), Succ/Prec:70.1/84.9:  42%|███████████████████████████████████████████▎                                                          | 51/120 [1:13:27<41:03, 35.70s/it]Succ/Prec:70.1/84.9
+0020000359
+0020000371
+0020000384
+0020000385
+0020000386
+0020000435
+Test 2: Time 1.001s (it:8.169s) Data:0.123s (it:0.073s), Succ/Prec:51.7/73.9:  43%|████████████████████████████████████████████▏                                                         | 52/120 [1:14:42<53:51, 47.52s/it]Succ/Prec:51.7/73.9
+0020000372
+0020000373
+0020000374
+0020000375
+Test 2: Time 1.001s (it:0.658s) Data:0.121s (it:0.040s), Succ/Prec:51.3/80.7:  44%|█████████████████████████████████████████████                                                         | 53/120 [1:15:01<43:34, 39.02s/it]Succ/Prec:51.3/80.7
+0020000397
+0020000399
+Test 2: Time 1.000s (it:2.427s) Data:0.119s (it:0.023s), Succ/Prec:74.4/90.1:  45%|█████████████████████████████████████████████▉                                                        | 54/120 [1:15:28<38:57, 35.42s/it]Succ/Prec:74.4/90.1
+0020000402
+Test 2: Time 0.998s (it:2.089s) Data:0.118s (it:0.019s), Succ/Prec:67.9/84.9:  46%|██████████████████████████████████████████████▊                                                       | 55/120 [1:15:52<34:39, 32.00s/it]Succ/Prec:67.9/84.9
+0020000381
+Test 2: Time 0.997s (it:0.730s) Data:0.116s (it:0.038s), Succ/Prec:77.0/87.0:  47%|███████████████████████████████████████████████▌                                                      | 56/120 [1:16:04<27:33, 25.84s/it]Succ/Prec:77.0/87.0
+0020000418
+0020000419
+Test 2: Time 0.995s (it:2.489s) Data:0.115s (it:0.023s), Succ/Prec:62.4/78.5:  48%|████████████████████████████████████████████████▍                                                     | 57/120 [1:16:28<26:51, 25.58s/it]Succ/Prec:62.4/78.5
+0020000394
+Test 2: Time 0.995s (it:0.861s) Data:0.113s (it:0.017s), Succ/Prec:78.1/89.8:  48%|█████████████████████████████████████████████████▎                                                    | 58/120 [1:16:45<23:39, 22.89s/it]Succ/Prec:78.1/89.8
+0020000399
+0020000416
+0020000417
+Test 2: Time 0.992s (it:0.778s) Data:0.111s (it:0.030s), Succ/Prec:69.5/85.2:  49%|██████████████████████████████████████████████████▏                                                   | 59/120 [1:17:15<25:21, 24.95s/it]Succ/Prec:69.5/85.2
+0020000399
+0020000408
+0020000409
+Test 2: Time 0.992s (it:2.223s) Data:0.110s (it:0.053s), Succ/Prec:72.7/86.5:  50%|███████████████████████████████████████████████████                                                   | 60/120 [1:17:27<21:02, 21.05s/it]Succ/Prec:72.7/86.5
+Test 2: Time 0.992s (it:0.828s) Data:0.109s (it:0.019s), Succ/Prec:79.3/93.6:  51%|███████████████████████████████████████████████████▊                                                  | 61/120 [1:17:33<16:10, 16.45s/it]Succ/Prec:79.3/93.6
+0020000417
+Test 2: Time 0.992s (it:2.205s) Data:0.107s (it:0.013s), Succ/Prec:67.3/81.0:  52%|████████████████████████████████████████████████████▋                                                 | 62/120 [1:17:42<14:00, 14.50s/it]Succ/Prec:67.3/81.0
+0020000432
+Test 2: Time 0.991s (it:2.636s) Data:0.106s (it:0.019s), Succ/Prec:71.5/89.6:  52%|█████████████████████████████████████████████████████▌                                                | 63/120 [1:18:02<15:11, 15.99s/it]Succ/Prec:71.5/89.6
+0020000412
+0020000431
+Test 2: Time 0.990s (it:2.102s) Data:0.105s (it:0.033s), Succ/Prec:58.3/80.7:  53%|██████████████████████████████████████████████████████▍                                               | 64/120 [1:18:17<14:46, 15.84s/it]Succ/Prec:58.3/80.7
+Test 2: Time 0.988s (it:1.365s) Data:0.103s (it:0.012s), Succ/Prec:66.9/86.9:  54%|███████████████████████████████████████████████████████▏                                              | 65/120 [1:18:43<17:13, 18.79s/it]Succ/Prec:66.9/86.9
+0020000414
+0020000415
+Test 2: Time 0.988s (it:0.739s) Data:0.103s (it:0.047s), Succ/Prec:75.2/84.7:  55%|████████████████████████████████████████████████████████                                              | 66/120 [1:18:53<14:23, 15.98s/it]Succ/Prec:75.2/84.7
+0020000418
+0020000432
+0020000436
+0020000437
+Test 2: Time 0.988s (it:2.151s) Data:0.101s (it:0.017s), Succ/Prec:59.3/78.8:  56%|████████████████████████████████████████████████████████▉                                             | 67/120 [1:19:15<15:47, 17.87s/it]Succ/Prec:59.3/78.8
+Test 2: Time 0.987s (it:0.838s) Data:0.100s (it:0.013s), Succ/Prec:75.3/92.1:  57%|█████████████████████████████████████████████████████████▊                                            | 68/120 [1:19:28<14:09, 16.33s/it]Succ/Prec:75.3/92.1
+0020000429
+0020000430
+0020000431
+0020000432
+0020000434
+0020000437
+0020000438
+0020000439
+0020000440
+0020000441
+0020000442
+0020000443
+0020000444
+0020000445
+0020000446
+0020000447
+0020000448
+0020000449
+0020000450
+0020000451
+0020000452
+0020000453
+0020000454
+0020000455
+0020000456
+0020000457
+0020000458
+0020000459
+0020000460
+0020000461
+0020000462
+0020000463
+0020000464
+0020000465
+0020000466
+0020000467
+Test 2: Time 0.995s (it:2.186s) Data:0.099s (it:0.026s), Succ/Prec:12.8/18.4:  57%|██████████████████████████████████████████████████████████▋                                           | 69/120 [1:20:45<29:35, 34.81s/it]Succ/Prec:12.8/18.4
+0020000431
+0020000432
+0020000449
+Test 2: Time 0.994s (it:0.650s) Data:0.098s (it:0.028s), Succ/Prec:67.6/83.1:  58%|███████████████████████████████████████████████████████████▌                                          | 70/120 [1:21:03<24:46, 29.72s/it]Succ/Prec:67.6/83.1
+Test 2: Time 0.993s (it:0.762s) Data:0.097s (it:0.013s), Succ/Prec:71.8/87.6:  59%|████████████████████████████████████████████████████████████▎                                         | 71/120 [1:21:16<20:07, 24.65s/it]Succ/Prec:71.8/87.6
+0020000438
+0020000442
+Test 2: Time 0.993s (it:0.807s) Data:0.096s (it:0.025s), Succ/Prec:73.7/81.7:  60%|█████████████████████████████████████████████████████████████▏                                        | 72/120 [1:21:29<16:58, 21.22s/it]Succ/Prec:73.7/81.7
+0020000440
+0020000442
+0020000447
+0020000448
+Test 2: Time 0.992s (it:1.031s) Data:0.095s (it:0.023s), Succ/Prec:66.9/84.9:  61%|██████████████████████████████████████████████████████████████                                        | 73/120 [1:22:00<18:43, 23.89s/it]Succ/Prec:66.9/84.9
+0020000456
+0020000462
+Test 2: Time 0.991s (it:0.785s) Data:0.094s (it:0.049s), Succ/Prec:61.6/86.8:  62%|██████████████████████████████████████████████████████████████▉                                       | 74/120 [1:22:16<16:34, 21.61s/it]Succ/Prec:61.6/86.8
+Test 2: Time 0.991s (it:1.021s) Data:0.093s (it:0.027s), Succ/Prec:77.2/88.3:  62%|███████████████████████████████████████████████████████████████▊                                      | 75/120 [1:22:22<12:44, 16.99s/it]Succ/Prec:77.2/88.3
+Test 2: Time 0.989s (it:1.316s) Data:0.092s (it:0.016s), Succ/Prec:69.8/88.5:  63%|████████████████████████████████████████████████████████████████▌                                     | 76/120 [1:22:42<13:06, 17.88s/it]Succ/Prec:69.8/88.5
+Test 2: Time 0.989s (it:0.990s) Data:0.091s (it:0.037s), Succ/Prec:86.2/96.2:  64%|█████████████████████████████████████████████████████████████████▍                                    | 77/120 [1:22:43<09:12, 12.85s/it]Succ/Prec:86.2/96.2
+Test 2: Time 0.988s (it:0.832s) Data:0.090s (it:0.003s), Succ/Prec:79.4/91.1:  65%|██████████████████████████████████████████████████████████████████▎                                   | 78/120 [1:22:57<09:16, 13.26s/it]Succ/Prec:79.4/91.1
+0020000461
+Test 2: Time 0.987s (it:1.472s) Data:0.090s (it:0.029s), Succ/Prec:69.7/90.8:  66%|███████████████████████████████████████████████████████████████████▏                                  | 79/120 [1:23:21<11:16, 16.51s/it]Succ/Prec:69.7/90.8
+Test 2: Time 0.986s (it:1.237s) Data:0.089s (it:0.042s), Succ/Prec:73.8/93.8:  67%|████████████████████████████████████████████████████████████████████                                  | 80/120 [1:23:23<07:58, 11.95s/it]Succ/Prec:73.8/93.8
+0020000472
+0020000479
+0020000480
+0020000481
+0020000482
+Test 2: Time 0.987s (it:0.639s) Data:0.088s (it:0.003s), Succ/Prec:43.4/55.0:  68%|████████████████████████████████████████████████████████████████████▊                                 | 81/120 [1:23:39<08:34, 13.19s/it]Succ/Prec:43.4/55.0
+0020000482
+Test 2: Time 0.987s (it:2.172s) Data:0.087s (it:0.009s), Succ/Prec:70.9/83.2:  68%|█████████████████████████████████████████████████████████████████████▋                                | 82/120 [1:23:48<07:33, 11.93s/it]Succ/Prec:70.9/83.2
+0020000474
+0020000476
+Test 2: Time 0.987s (it:1.186s) Data:0.086s (it:0.008s), Succ/Prec:71.3/81.8:  69%|██████████████████████████████████████████████████████████████████████▌                               | 83/120 [1:24:11<09:24, 15.27s/it]Succ/Prec:71.3/81.8
+0020000486
+Test 2: Time 0.986s (it:0.782s) Data:0.085s (it:0.032s), Succ/Prec:67.0/80.5:  70%|███████████████████████████████████████████████████████████████████████▍                              | 84/120 [1:24:23<08:34, 14.30s/it]Succ/Prec:67.0/80.5
+0020000483
+0020000484
+0020000485
+0020000486
+0020000487
+0020000489
+0020000490
+0020000491
+0020000492
+0020000493
+0020000494
+0020000495
+0020000496
+0020000497
+0020000498
+0020000507
+0020000515
+0020000518
+Test 2: Time 0.988s (it:1.963s) Data:0.085s (it:0.024s), Succ/Prec:8.1/6.8:  71%|█████████████████████████████████████████████████████████████████████████▋                              | 85/120 [1:25:10<14:08, 24.25s/it]Succ/Prec:8.1/6.8
+0020000488
+0020000489
+0020000490
+0020000491
+0020000492
+0020000493
+Test 2: Time 0.989s (it:0.638s) Data:0.084s (it:0.021s), Succ/Prec:37.7/49.6:  72%|█████████████████████████████████████████████████████████████████████████                             | 86/120 [1:25:28<12:36, 22.25s/it]Succ/Prec:37.7/49.6
+0020000487
+0020000495
+Test 2: Time 0.989s (it:0.638s) Data:0.084s (it:0.021s), Succ/Prec:37.7/49.6:  72%|█████████████████████████████████████████████████████████████████████████▉                            | 87/120 [1:25:39<10:19, 18.78s/it]Succ/Prec:60.9/75.5
+Test 2: Time 0.989s (it:2.105s) Data:0.083s (it:0.008s), Succ/Prec:60.9/75.5:  72%|█████████████████████████████████████████████████████████████████████████▉                            | 87/120 [1:25:39<10:19, 18.78s/it]0020000489
+0020000490
+0020000491
+0020000496
+Test 2: Time 0.988s (it:2.565s) Data:0.082s (it:0.008s), Succ/Prec:70.5/85.2:  73%|██████████████████████████████████████████████████████████████████████████▊                           | 88/120 [1:26:16<12:59, 24.36s/it]Succ/Prec:70.5/85.2
+0020000500
+0020000504
+0020000506
+0020000507
+0020000508
+0020000509
+0020000510
+0020000511
+0020000512
+0020000513
+0020000515
+0020000516
+0020000517
+0020000518
+0020000520
+0020000521
+0020000522
+0020000523
+0020000524
+Test 2: Time 0.991s (it:0.632s) Data:0.082s (it:0.024s), Succ/Prec:20.2/27.5:  74%|███████████████████████████████████████████████████████████████████████████▋                          | 89/120 [1:27:01<15:48, 30.59s/it]Succ/Prec:20.2/27.5
+0020000503
+Test 2: Time 0.991s (it:0.782s) Data:0.081s (it:0.015s), Succ/Prec:75.5/90.5:  75%|████████████████████████████████████████████████████████████████████████████▌                         | 90/120 [1:27:10<12:04, 24.14s/it]Succ/Prec:75.5/90.5
+0020000507
+0020000515
+0020000518
+0020000553
+Test 2: Time 0.990s (it:1.232s) Data:0.080s (it:0.018s), Succ/Prec:67.5/83.8:  76%|█████████████████████████████████████████████████████████████████████████████▎                        | 91/120 [1:27:57<14:57, 30.94s/it]Succ/Prec:67.5/83.8
+0020000512
+0020000513
+0020000514
+0020000515
+0020000523
+Test 2: Time 0.990s (it:2.142s) Data:0.080s (it:0.069s), Succ/Prec:60.2/72.4:  77%|██████████████████████████████████████████████████████████████████████████████▏                       | 92/120 [1:28:18<13:01, 27.92s/it]Succ/Prec:60.2/72.4
+0020000514
+Test 2: Time 0.990s (it:2.057s) Data:0.079s (it:0.013s), Succ/Prec:69.0/85.0:  78%|███████████████████████████████████████████████████████████████████████████████                       | 93/120 [1:28:23<09:30, 21.11s/it]Succ/Prec:69.0/85.0
+0020000524
+0020000536
+0020000537
+Test 2: Time 0.990s (it:2.338s) Data:0.079s (it:0.011s), Succ/Prec:66.7/85.5:  78%|███████████████████████████████████████████████████████████████████████████████▉                      | 94/120 [1:28:43<09:01, 20.82s/it]Succ/Prec:66.7/85.5
+0020000524
+0020000525
+0020000526
+0020000527
+0020000528
+0020000529
+0020000530
+0020000531
+0020000532
+0020000533
+0020000534
+0020000535
+0020000536
+0020000537
+0020000538
+0020000539
+0020000540
+Test 2: Time 0.993s (it:0.742s) Data:0.078s (it:0.024s), Succ/Prec:26.5/26.8:  79%|████████████████████████████████████████████████████████████████████████████████▊                     | 95/120 [1:29:22<10:56, 26.27s/it]Succ/Prec:26.5/26.8
+0020000524
+Test 2: Time 0.992s (it:3.297s) Data:0.077s (it:0.033s), Succ/Prec:73.4/87.6:  80%|█████████████████████████████████████████████████████████████████████████████████▌                    | 96/120 [1:30:00<11:55, 29.82s/it]Succ/Prec:73.4/87.6
+0020000543
+0020000544
+0020000545
+0020000546
+0020000547
+0020000548
+0020000549
+0020000550
+0020000551
+0020000552
+0020000553
+0020000554
+0020000555
+0020000556
+0020000557
+0020000558
+0020000559
+0020000560
+0020000561
+0020000562
+0020000563
+0020000564
+Test 2: Time 0.996s (it:2.025s) Data:0.077s (it:0.024s), Succ/Prec:21.8/26.9:  81%|██████████████████████████████████████████████████████████████████████████████████▍                   | 97/120 [1:30:53<14:04, 36.73s/it]Succ/Prec:21.8/26.9
+0020000536
+0020000537
+0020000538
+0020000540
+0020000544
+Test 2: Time 0.995s (it:1.314s) Data:0.076s (it:0.017s), Succ/Prec:71.0/87.5:  82%|███████████████████████████████████████████████████████████████████████████████████▎                  | 98/120 [1:31:36<14:05, 38.42s/it]Succ/Prec:71.0/87.5
+0020000538
+Test 2: Time 0.993s (it:1.749s) Data:0.076s (it:0.065s), Succ/Prec:65.6/85.2:  82%|████████████████████████████████████████████████████████████████████████████████████▏                 | 99/120 [1:32:20<14:03, 40.16s/it]Succ/Prec:65.6/85.2
+0020000551
+0020000552
+Test 2: Time 0.993s (it:2.625s) Data:0.076s (it:0.031s), Succ/Prec:69.5/86.1:  83%|████████████████████████████████████████████████████████████████████████████████████▏                | 100/120 [1:32:36<10:58, 32.91s/it]Succ/Prec:69.5/86.1
+0020000544
+0020000552
+0020000553
+Test 2: Time 0.992s (it:0.724s) Data:0.075s (it:0.024s), Succ/Prec:53.1/72.4:  84%|█████████████████████████████████████████████████████████████████████████████████████                | 101/120 [1:32:59<09:30, 30.02s/it]Succ/Prec:53.1/72.4
+0020000550
+0020000559
+Test 2: Time 0.991s (it:0.650s) Data:0.075s (it:0.039s), Succ/Prec:66.0/86.9:  85%|█████████████████████████████████████████████████████████████████████████████████████▊               | 102/120 [1:33:22<08:24, 28.02s/it]Succ/Prec:66.0/86.9
+0020000552
+0020000553
+0020000554
+0020000555
+0020000556
+0020000557
+0020000558
+0020000559
+0020000560
+0020000561
+0020000562
+0020000563
+0020000564
+0020000565
+0020000566
+0020000567
+0020000568
+0020000569
+0020000570
+Test 2: Time 0.996s (it:1.958s) Data:0.075s (it:0.038s), Succ/Prec:44.6/71.6:  86%|██████████████████████████████████████████████████████████████████████████████████████▋              | 103/120 [1:34:13<09:52, 34.88s/it]Succ/Prec:44.6/71.6
+Test 2: Time 0.995s (it:0.869s) Data:0.074s (it:0.012s), Succ/Prec:78.4/91.6:  87%|███████████████████████████████████████████████████████████████████████████████████████▌             | 104/120 [1:34:37<08:25, 31.62s/it]Succ/Prec:78.4/91.6
+0020000589
+0020000600
+0020000603
+0020000605
+0020000606
+0020000607
+0020000608
+0020000609
+0020000610
+0020000611
+0020000612
+0020000613
+0020000614
+0020000615
+0020000616
+0020000617
+0020000618
+0020000619
+0020000620
+0020000621
+0020000622
+0020000623
+0020000624
+0020000625
+0020000626
+0020000627
+0020000628
+0020000629
+0020000630
+0020000631
+0020000632
+0020000633
+0020000637
+0020000638
+0020000639
+0020000640
+0020000641
+0020000643
+0020000644
+0020000645
+0020000648
+0020000649
+0020000650
+0020000651
+0020000652
+0020000653
+0020000656
+0020000657
+0020000658
+0020000659
+0020000660
+0020000661
+0020000662
+0020000663
+0020000664
+0020000665
+0020000666
+0020000667
+0020000668
+0020000669
+0020000670
+0020000671
+0020000672
+0020000673
+0020000674
+0020000675
+0020000676
+0020000677
+0020000678
+0020000679
+0020000680
+0020000681
+0020000682
+0020000683
+0020000684
+0020000685
+0020000686
+0020000687
+0020000688
+0020000689
+0020000690
+0020000691
+0020000692
+0020000693
+0020000694
+0020000695
+0020000696
+0020000697
+0020000698
+0020000699
+0020000700
+0020000701
+0020000702
+0020000703
+0020000704
+0020000705
+0020000706
+0020000707
+0020000708
+0020000709
+0020000710
+0020000711
+0020000712
+0020000713
+0020000714
+0020000715
+0020000716
+0020000717
+0020000718
+0020000719
+0020000720
+0020000721
+0020000722
+0020000723
+0020000724
+0020000725
+0020000726
+0020000727
+0020000728
+0020000729
+0020000730
+0020000731
+0020000732
+0020000734
+0020000735
+0020000736
+0020000738
+0020000739
+0020000740
+0020000741
+0020000742
+0020000743
+0020000744
+0020000745
+0020000746
+0020000747
+0020000748
+0020000749
+0020000750
+0020000751
+0020000752
+0020000753
+0020000754
+0020000755
+0020000756
+0020000757
+0020000758
+0020000760
+0020000761
+0020000762
+0020000763
+0020000764
+0020000765
+0020000766
+0020000767
+0020000768
+0020000769
+0020000770
+0020000771
+0020000774
+0020000775
+0020000776
+0020000777
+0020000778
+0020000779
+0020000780
+0020000781
+0020000782
+0020000783
+0020000784
+0020000785
+0020000786
+0020000787
+0020000788
+0020000789
+0020000790
+0020000791
+0020000792
+0020000793
+0020000794
+0020000795
+0020000800
+0020000805
+0020000811
+0020000816
+0020000835
+Test 2: Time 1.024s (it:0.638s) Data:0.074s (it:0.039s), Succ/Prec:9.1/11.2:  88%|████████████████████████████████████████████████████████████████████████████████████████▍            | 105/120 [1:41:58<38:35, 154.35s/it]Succ/Prec:9.1/11.2
+0020000572
+0020000573
+0020000574
+0020000575
+0020000576
+0020000579
+0020000583
+0020000585
+0020000593
+Test 2: Time 1.025s (it:2.012s) Data:0.074s (it:0.132s), Succ/Prec:7.4/4.3:  88%|██████████████████████████████████████████████████████████████████████████████████████████            | 106/120 [1:42:25<27:05, 116.13s/it]Succ/Prec:7.4/4.3
+0020000584
+0020000643
+0020000644
+0020000645
+0020000646
+0020000647
+0020000648
+0020000649
+0020000650
+0020000651
+0020000652
+0020000653
+0020000655
+0020000657
+0020000658
+0020000659
+0020000660
+0020000661
+0020000662
+0020000663
+0020000664
+0020000665
+0020000666
+0020000667
+0020000668
+0020000669
+0020000670
+0020000671
+0020000672
+0020000673
+0020000674
+0020000675
+0020000676
+0020000677
+0020000678
+0020000679
+0020000680
+0020000681
+0020000682
+0020000683
+0020000684
+0020000685
+0020000686
+0020000688
+0020000689
+0020000690
+0020000691
+0020000692
+0020000693
+0020000694
+0020000695
+0020000696
+0020000697
+0020000698
+0020000699
+0020000700
+0020000701
+0020000702
+0020000703
+0020000704
+0020000706
+0020000707
+0020000708
+0020000709
+0020000710
+0020000711
+0020000712
+0020000713
+0020000714
+0020000715
+0020000717
+0020000718
+0020000719
+0020000721
+0020000723
+0020000724
+0020000725
+0020000726
+0020000727
+0020000728
+0020000729
+0020000730
+0020000731
+0020000732
+0020000733
+0020000734
+0020000735
+0020000736
+0020000737
+0020000739
+0020000740
+0020000741
+0020000742
+0020000744
+0020000749
+0020000752
+0020000753
+0020000754
+0020000755
+0020000756
+0020000757
+0020000758
+0020000760
+0020000763
+0020000764
+0020000765
+0020000766
+0020000767
+0020000768
+0020000770
+0020000771
+0020000773
+0020000774
+0020000775
+0020000776
+0020000777
+0020000778
+0020000779
+0020000780
+0020000781
+0020000782
+0020000783
+0020000784
+0020000785
+0020000786
+0020000787
+0020000788
+0020000789
+0020000790
+0020000791
+0020000792
+0020000793
+0020000794
+0020000795
+0020000796
+0020000797
+0020000798
+0020000799
+0020000800
+0020000801
+0020000802
+0020000803
+0020000804
+0020000805
+0020000806
+0020000807
+0020000808
+0020000809
+0020000810
+0020000811
+0020000812
+0020000813
+0020000814
+0020000815
+0020000816
+0020000817
+0020000818
+0020000819
+0020000820
+0020000821
+0020000822
+0020000823
+0020000824
+0020000825
+0020000826
+0020000827
+0020000828
+0020000829
+0020000830
+0020000831
+0020000832
+0020000833
+0020000834
+0020000835
+0020000836
+Test 2: Time 1.053s (it:2.411s) Data:0.074s (it:0.014s), Succ/Prec:15.0/19.9:  89%|█████████████████████████████████████████████████████████████████████████████████████████▏          | 107/120 [1:49:43<46:06, 212.83s/it]Succ/Prec:15.0/19.9
+0020000596
+0020000597
+Test 2: Time 1.053s (it:3.171s) Data:0.074s (it:0.139s), Succ/Prec:55.2/78.2:  90%|██████████████████████████████████████████████████████████████████████████████████████████          | 108/120 [1:49:56<30:34, 152.89s/it]Succ/Prec:55.2/78.2
+0020000596
+Test 2: Time 1.052s (it:1.148s) Data:0.074s (it:0.017s), Succ/Prec:72.6/84.4:  91%|██████████████████████████████████████████████████████████████████████████████████████████▊         | 109/120 [1:50:15<20:40, 112.74s/it]Succ/Prec:72.6/84.4
+Test 2: Time 1.050s (it:0.782s) Data:0.073s (it:0.035s), Succ/Prec:68.4/87.1:  92%|████████████████████████████████████████████████████████████████████████████████████████████▌        | 110/120 [1:50:35<14:08, 84.89s/it]Succ/Prec:68.4/87.1
+Test 2: Time 1.050s (it:0.632s) Data:0.073s (it:0.041s), Succ/Prec:68.3/90.0:  92%|█████████████████████████████████████████████████████████████████████████████████████████████▍       | 111/120 [1:50:37<08:59, 59.98s/it]Succ/Prec:68.3/90.0
+Succ/Prec:100.0/100.0
+Test 2: Time 1.049s (it:0.736s) Data:0.072s (it:0.002s), Succ/Prec:78.4/89.1:  94%|███████████████████████████████████████████████████████████████████████████████████████████████      | 113/120 [1:50:43<04:59, 42.78s/it]Succ/Prec:78.4/89.1
+Test 2: Time 1.049s (it:0.843s) Data:0.071s (it:0.014s), Succ/Prec:71.3/88.8:  95%|███████████████████████████████████████████████████████████████████████████████████████████████▉     | 114/120 [1:50:43<03:01, 30.21s/it]Succ/Prec:71.3/88.8
+0020000617
+0020000623
+Test 2: Time 1.049s (it:1.990s) Data:0.071s (it:0.003s), Succ/Prec:70.3/87.8:  96%|████████████████████████████████████████████████████████████████████████████████████████████████▊    | 115/120 [1:50:51<01:57, 23.41s/it]Succ/Prec:70.3/87.8
+0020000620
+0020000622
+0020000623
+0020000624
+0020000625
+0020000626
+0020000628
+0020000629
+0020000630
+0020000632
+0020000633
+0020000634
+0020000635
+0020000636
+Test 2: Time 1.051s (it:1.907s) Data:0.070s (it:0.006s), Succ/Prec:15.3/15.0:  97%|█████████████████████████████████████████████████████████████████████████████████████████████████▋   | 116/120 [1:51:22<01:42, 25.55s/it]Succ/Prec:15.3/15.0
+Test 2: Time 1.051s (it:0.645s) Data:0.070s (it:0.011s), Succ/Prec:63.1/91.9:  98%|██████████████████████████████████████████████████████████████████████████████████████████████████▍  | 117/120 [1:51:24<00:56, 18.68s/it]Succ/Prec:63.1/91.9
+0020000622
+0020000623
+Test 2: Time 1.051s (it:2.043s) Data:0.069s (it:0.004s), Succ/Prec:50.6/63.1:  98%|███████████████████████████████████████████████████████████████████████████████████████████████████▎ | 118/120 [1:51:31<00:29, 14.99s/it]Succ/Prec:50.6/63.1
+Test 2: Time 1.050s (it:0.633s) Data:0.069s (it:0.004s), Succ/Prec:59.2/82.7:  99%|████████████████████████████████████████████████████████████████████████████████████████████████████▏| 119/120 [1:51:38<00:12, 12.79s/it]Succ/Prec:59.2/82.7
+0020000736
+0020000756
+0020000757
+0020000758
+0020000759
+0020000760
+0020000761
+0020000762
+0020000763
+0020000764
+Test 2: Time 1.050s (it:0.622s) Data:0.068s (it:0.009s), Succ/Prec:36.1/54.9: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 120/120 [1:52:12<00:00, 19.24s/it]Succ/Prec:36.1/54.9
+2019-11-27 03:47:17,432 [MainThread  ] [INFO ]  Succ/Prec:58.4/73.4
+
+2019-11-27 03:47:19,578 [MainThread  ] [INFO ]  mean Succ/Prec 58.44402868724665/73.37932647333957
+2019-11-27 03:47:19,580 [MainThread  ] [INFO ]  ---- EPOCH 3 JOINT EVALUATION ----
+2019-11-27 03:47:19,580 [MainThread  ] [INFO ]  ==> Output file: ../output/siamese/default/eval/epoch_no_number/rpnpred64
+eval:   0%|                                                                                                                                                                                         | 0/120 [00:00<?, ?it/s]0019000007
+Test 3: Time 8.541s (it:10.896s) Data:3.271s (it:3.271s), Succ/Prec:80.3/91.6:   1%|▊                                                                                                     | 1/120 [01:08<2:15:07, 68.13s/it]Succ/Prec:80.3/91.6
+0019000085
+0019000086
+0019000087
+0019000088
+0019000089
+Test 3: Time 2.292s (it:6.016s) Data:1.639s (it:0.008s), Succ/Prec:72.8/87.1:   2%|█▋                                                                                                     | 2/120 [02:49<2:33:33, 78.08s/it]Succ/Prec:72.8/87.1
+0019000430
+Test 3: Time 1.259s (it:10.189s) Data:1.120s (it:0.083s), Succ/Prec:72.2/88.0:   2%|██▌                                                                                                  | 3/120 [06:30<3:55:43, 120.88s/it]Succ/Prec:72.2/88.0
+0019000478
+0019000786
+0019000788
+0019000789
+0019000790
+0019000791
+Test 3: Time 1.097s (it:12.995s) Data:0.870s (it:0.118s), Succ/Prec:57.6/79.8:   3%|███▎                                                                                                 | 4/120 [11:25<5:34:39, 173.10s/it]Succ/Prec:57.6/79.8
+0019000554
+0019000555
+0019000557
+0019000558
+0019000559
+0019000560
+0019000561
+0019000562
+0019000563
+0019000564
+0019000565
+0019000566
+0019000567
+0019000568
+0019000569
+0019000570
+0019000571
+0019000720
+0019000722
+0019000723
+0019000724
+0019000725
+Test 3: Time 1.126s (it:6.357s) Data:0.727s (it:0.154s), Succ/Prec:59.8/79.1:   4%|████▎                                                                                                 | 5/120 [14:57<5:54:23, 184.90s/it]Succ/Prec:59.8/79.1
+Test 3: Time 1.138s (it:0.867s) Data:0.620s (it:0.088s), Succ/Prec:68.4/85.1:   5%|█████                                                                                                 | 6/120 [15:49<4:35:20, 144.92s/it]Succ/Prec:68.4/85.1
+Test 3: Time 1.118s (it:0.885s) Data:0.538s (it:0.049s), Succ/Prec:66.7/88.3:   6%|█████▉                                                                                                | 7/120 [17:10<3:56:53, 125.78s/it]Succ/Prec:66.7/88.3
+0020000183
+Test 3: Time 1.067s (it:0.696s) Data:0.485s (it:0.108s), Succ/Prec:70.4/88.1:   7%|██████▊                                                                                               | 8/120 [19:57<4:18:05, 138.26s/it]Succ/Prec:70.4/88.1
+0020000001
+Test 3: Time 1.068s (it:0.879s) Data:0.442s (it:0.100s), Succ/Prec:70.1/87.4:   8%|███████▋                                                                                              | 9/120 [20:18<3:10:19, 102.88s/it]Succ/Prec:70.1/87.4
+Test 3: Time 1.058s (it:1.168s) Data:0.400s (it:0.026s), Succ/Prec:78.2/91.1:   8%|████████▌                                                                                             | 10/120 [21:05<2:38:15, 86.32s/it]Succ/Prec:78.2/91.1
+Test 3: Time 1.081s (it:5.560s) Data:0.370s (it:0.062s), Succ/Prec:79.9/92.7:   9%|█████████▎                                                                                            | 11/120 [22:49<2:46:20, 91.56s/it]Succ/Prec:79.9/92.7
+0020000097
+Test 3: Time 1.077s (it:7.205s) Data:0.343s (it:0.051s), Succ/Prec:79.8/90.8:  10%|██████████▏                                                                                           | 12/120 [24:29<2:49:25, 94.12s/it]Succ/Prec:79.8/90.8
+0020000094
+0020000123
+0020000139
+0020000142
+0020000143
+0020000144
+0020000145
+0020000146
+0020000147
+0020000148
+0020000149
+0020000150
+Test 3: Time 1.051s (it:2.286s) Data:0.321s (it:0.050s), Succ/Prec:71.8/87.3:  11%|██████████▉                                                                                          | 13/120 [26:32<3:03:26, 102.87s/it]Succ/Prec:71.8/87.3
+0020000119
+Test 3: Time 1.040s (it:2.039s) Data:0.304s (it:0.094s), Succ/Prec:69.3/84.9:  12%|███████████▊                                                                                         | 14/120 [28:26<3:07:17, 106.02s/it]Succ/Prec:69.3/84.9
+0020000036
+0020000077
+0020000078
+0020000079
+0020000080
+0020000081
+Test 3: Time 1.030s (it:0.790s) Data:0.288s (it:0.062s), Succ/Prec:58.8/80.3:  12%|████████████▋                                                                                        | 15/120 [30:01<3:00:06, 102.92s/it]Succ/Prec:58.8/80.3
+0020000001
+0020000018
+0020000020
+0020000021
+0020000022
+0020000023
+0020000024
+0020000025
+0020000026
+0020000028
+0020000029
+0020000031
+0020000032
+0020000033
+0020000034
+0020000035
+0020000036
+0020000037
+0020000038
+0020000039
+0020000040
+0020000041
+0020000042
+0020000043
+0020000044
+0020000045
+0020000046
+0020000049
+0020000051
+0020000052
+0020000053
+0020000054
+0020000060
+0020000064
+0020000067
+0020000068
+0020000069
+0020000071
+0020000072
+0020000080
+Test 3: Time 1.028s (it:1.026s) Data:0.278s (it:0.129s), Succ/Prec:58.6/78.0:  13%|█████████████▍                                                                                       | 16/120 [33:11<3:43:19, 128.84s/it]Succ/Prec:58.6/78.0
+0020000032
+0020000039
+0020000040
+0020000047
+0020000057
+0020000065
+Test 3: Time 0.998s (it:1.827s) Data:0.271s (it:0.152s), Succ/Prec:71.3/85.1:  14%|██████████████▎                                                                                      | 17/120 [36:02<4:02:58, 141.54s/it]Succ/Prec:71.3/85.1
+0020000001
+0020000002
+0020000009
+0020000011
+0020000017
+0020000019
+0020000020
+0020000021
+0020000025
+0020000029
+0020000031
+0020000033
+0020000034
+0020000035
+0020000037
+0020000050
+0020000067
+0020000070
+0020000071
+0020000072
+0020000073
+0020000074
+0020000075
+0020000076
+0020000077
+0020000078
+0020000079
+0020000080
+0020000081
+0020000082
+0020000083
+0020000084
+0020000085
+0020000086
+0020000087
+0020000088
+0020000089
+0020000090
+Test 3: Time 1.011s (it:2.028s) Data:0.265s (it:0.163s), Succ/Prec:58.7/84.2:  15%|███████████████▏                                                                                     | 18/120 [38:03<3:49:56, 135.26s/it]Succ/Prec:58.7/84.2
+0020000005
+0020000018
+0020000019
+0020000023
+0020000027
+0020000028
+0020000029
+0020000030
+0020000031
+0020000032
+0020000033
+0020000034
+0020000035
+0020000036
+0020000037
+0020000038
+0020000039
+0020000040
+0020000041
+0020000042
+0020000043
+0020000044
+0020000045
+Test 3: Time 1.019s (it:2.045s) Data:0.253s (it:0.047s), Succ/Prec:38.4/52.0:  16%|███████████████▉                                                                                     | 19/120 [39:08<3:12:40, 114.46s/it]Succ/Prec:38.4/52.0
+0020000041
+0020000042
+0020000045
+0020000047
+0020000048
+0020000049
+0020000051
+0020000052
+0020000054
+0020000055
+0020000056
+0020000057
+0020000058
+0020000059
+0020000060
+0020000061
+0020000062
+0020000063
+0020000064
+0020000065
+0020000066
+Test 3: Time 1.015s (it:0.976s) Data:0.242s (it:0.025s), Succ/Prec:53.8/73.5:  17%|████████████████▊                                                                                    | 20/120 [41:20<3:19:23, 119.64s/it]Succ/Prec:53.8/73.5
+0020000088
+0020000089
+Test 3: Time 1.014s (it:3.846s) Data:0.237s (it:0.143s), Succ/Prec:63.4/81.8:  18%|█████████████████▊                                                                                    | 21/120 [42:10<2:42:55, 98.74s/it]Succ/Prec:63.4/81.8
+0020000073
+0020000074
+0020000075
+0020000077
+0020000078
+0020000079
+0020000081
+0020000085
+0020000086
+0020000087
+0020000089
+0020000091
+0020000092
+0020000098
+0020000101
+0020000108
+0020000111
+0020000115
+0020000127
+Test 3: Time 1.010s (it:0.812s) Data:0.229s (it:0.064s), Succ/Prec:63.1/85.9:  18%|██████████████████▌                                                                                  | 22/120 [44:03<2:48:19, 103.05s/it]Succ/Prec:63.1/85.9
+Test 3: Time 1.006s (it:2.099s) Data:0.225s (it:0.135s), Succ/Prec:80.8/91.5:  19%|███████████████████▌                                                                                  | 23/120 [45:28<2:37:45, 97.58s/it]Succ/Prec:80.8/91.5
+0020000100
+0020000101
+0020000102
+0020000105
+0020000106
+0020000108
+0020000115
+0020000117
+0020000126
+0020000130
+0020000170
+0020000201
+0020000202
+Test 3: Time 1.014s (it:2.204s) Data:0.218s (it:0.048s), Succ/Prec:58.2/81.1:  20%|████████████████████▏                                                                                | 24/120 [47:34<2:49:57, 106.22s/it]Succ/Prec:58.2/81.1
+0020000128
+0020000131
+0020000132
+0020000133
+0020000134
+0020000135
+0020000136
+0020000142
+0020000152
+Test 3: Time 1.008s (it:0.818s) Data:0.211s (it:0.054s), Succ/Prec:63.0/86.0:  21%|█████████████████████▎                                                                                | 25/120 [48:53<2:35:00, 97.90s/it]Succ/Prec:63.0/86.0
+0020000153
+0020000788
+0020000794
+Test 3: Time 1.036s (it:2.185s) Data:0.208s (it:0.117s), Succ/Prec:73.8/88.0:  22%|█████████████████████▍                                                                             | 26/120 [1:01:22<7:39:22, 293.22s/it]Succ/Prec:73.8/88.0
+0020000171
+0020000172
+0020000173
+0020000174
+0020000175
+0020000177
+0020000178
+0020000179
+0020000180
+0020000182
+0020000183
+0020000184
+0020000185
+0020000186
+0020000187
+0020000189
+0020000190
+0020000192
+0020000193
+0020000194
+0020000195
+0020000196
+0020000197
+0020000198
+0020000199
+0020000200
+0020000201
+0020000202
+0020000203
+0020000204
+0020000205
+0020000206
+0020000208
+0020000209
+0020000210
+0020000211
+0020000212
+0020000213
+0020000214
+0020000215
+0020000216
+0020000217
+0020000218
+0020000219
+0020000220
+0020000222
+0020000224
+0020000227
+Test 3: Time 1.050s (it:0.639s) Data:0.212s (it:0.321s), Succ/Prec:7.2/8.4:  22%|██████████████████████▋                                                                              | 27/120 [1:03:15<6:10:55, 239.31s/it]Succ/Prec:7.2/8.4
+0020000186
+Test 3: Time 1.047s (it:0.837s) Data:0.205s (it:0.033s), Succ/Prec:64.8/83.5:  23%|███████████████████████                                                                            | 28/120 [1:03:42<4:29:16, 175.62s/it]Succ/Prec:64.8/83.5
+0020000203
+0020000205
+0020000206
+0020000207
+0020000208
+0020000209
+0020000211
+0020000212
+0020000213
+0020000214
+0020000215
+0020000216
+0020000217
+0020000218
+0020000219
+0020000222
+0020000223
+0020000224
+0020000225
+0020000226
+0020000227
+0020000228
+0020000229
+0020000230
+0020000231
+Test 3: Time 1.052s (it:2.051s) Data:0.200s (it:0.045s), Succ/Prec:22.2/30.7:  24%|███████████████████████▉                                                                           | 29/120 [1:04:45<3:35:05, 141.81s/it]Succ/Prec:22.2/30.7
+0020000206
+0020000209
+Test 3: Time 1.050s (it:1.766s) Data:0.194s (it:0.024s), Succ/Prec:69.7/85.4:  25%|████████████████████████▊                                                                          | 30/120 [1:05:21<2:44:48, 109.88s/it]Succ/Prec:69.7/85.4
+0020000222
+0020000223
+0020000229
+0020000231
+Test 3: Time 1.050s (it:0.638s) Data:0.189s (it:0.050s), Succ/Prec:60.9/83.2:  26%|█████████████████████████▊                                                                          | 31/120 [1:05:37<2:01:16, 81.75s/it]Succ/Prec:60.9/83.2
+0020000240
+Test 3: Time 1.049s (it:2.479s) Data:0.184s (it:0.011s), Succ/Prec:72.9/88.2:  27%|██████████████████████████▋                                                                         | 32/120 [1:05:52<1:30:26, 61.67s/it]Succ/Prec:72.9/88.2
+0020000226
+Test 3: Time 1.048s (it:0.730s) Data:0.179s (it:0.025s), Succ/Prec:54.2/77.6:  28%|███████████████████████████▌                                                                        | 33/120 [1:06:05<1:08:32, 47.27s/it]Succ/Prec:54.2/77.6
+0020000224
+0020000225
+0020000228
+0020000229
+0020000230
+0020000232
+0020000234
+0020000237
+0020000242
+0020000243
+0020000244
+0020000250
+0020000253
+0020000254
+0020000255
+Test 3: Time 1.049s (it:0.646s) Data:0.175s (it:0.027s), Succ/Prec:5.4/2.9:  28%|████████████████████████████▉                                                                         | 34/120 [1:06:48<1:05:49, 45.93s/it]Succ/Prec:5.4/2.9
+Test 3: Time 1.048s (it:0.647s) Data:0.170s (it:0.019s), Succ/Prec:62.9/78.6:  29%|█████████████████████████████▊                                                                        | 35/120 [1:06:53<47:35, 33.60s/it]Succ/Prec:62.9/78.6
+Test 3: Time 1.047s (it:1.118s) Data:0.166s (it:0.006s), Succ/Prec:71.8/88.2:  30%|██████████████████████████████▌                                                                       | 36/120 [1:07:08<39:17, 28.07s/it]Succ/Prec:71.8/88.2
+0020000266
+0020000272
+0020000273
+0020000274
+0020000275
+0020000276
+0020000277
+0020000278
+0020000279
+0020000280
+Test 3: Time 1.049s (it:2.440s) Data:0.162s (it:0.028s), Succ/Prec:33.9/40.8:  31%|███████████████████████████████▍                                                                      | 37/120 [1:07:33<37:24, 27.05s/it]Succ/Prec:33.9/40.8
+Test 3: Time 1.049s (it:2.352s) Data:0.158s (it:0.013s), Succ/Prec:68.0/85.6:  32%|████████████████████████████████▎                                                                     | 38/120 [1:08:10<41:03, 30.04s/it]Succ/Prec:68.0/85.6
+Test 3: Time 1.049s (it:0.978s) Data:0.154s (it:0.023s), Succ/Prec:72.1/80.4:  32%|█████████████████████████████████▏                                                                    | 39/120 [1:08:15<30:29, 22.58s/it]Succ/Prec:72.1/80.4
+Test 3: Time 1.049s (it:0.656s) Data:0.151s (it:0.012s), Succ/Prec:67.7/84.8:  33%|██████████████████████████████████                                                                    | 40/120 [1:08:31<27:29, 20.62s/it]Succ/Prec:67.7/84.8
+0020000286
+Test 3: Time 1.047s (it:0.640s) Data:0.147s (it:0.011s), Succ/Prec:59.7/80.0:  34%|██████████████████████████████████▊                                                                   | 41/120 [1:08:43<23:34, 17.90s/it]Succ/Prec:59.7/80.0
+0020000289
+0020000294
+0020000306
+0020000308
+0020000312
+0020000313
+0020000318
+Test 3: Time 1.043s (it:0.659s) Data:0.144s (it:0.011s), Succ/Prec:5.1/3.2:  35%|████████████████████████████████████▍                                                                   | 42/120 [1:09:40<38:48, 29.86s/it]Succ/Prec:5.1/3.2
+0020000293
+Test 3: Time 1.043s (it:1.030s) Data:0.142s (it:0.037s), Succ/Prec:67.7/87.7:  36%|████████████████████████████████████▌                                                                 | 43/120 [1:09:53<31:36, 24.63s/it]Succ/Prec:67.7/87.7
+Test 3: Time 1.040s (it:0.937s) Data:0.139s (it:0.018s), Succ/Prec:71.5/83.7:  37%|█████████████████████████████████████▍                                                                | 44/120 [1:10:33<37:02, 29.24s/it]Succ/Prec:71.5/83.7
+Test 3: Time 1.036s (it:0.634s) Data:0.137s (it:0.064s), Succ/Prec:32.5/39.8:  38%|██████████████████████████████████████▎                                                               | 45/120 [1:11:17<42:13, 33.79s/it]Succ/Prec:32.5/39.8
+0020000352
+Test 3: Time 1.031s (it:0.844s) Data:0.135s (it:0.032s), Succ/Prec:68.6/83.9:  38%|███████████████████████████████████████                                                               | 46/120 [1:12:00<45:03, 36.53s/it]Succ/Prec:68.6/83.9
+0020000331
+0020000402
+0020000403
+Test 3: Time 1.027s (it:2.923s) Data:0.134s (it:0.075s), Succ/Prec:67.3/83.5:  39%|███████████████████████████████████████▉                                                              | 47/120 [1:12:57<51:56, 42.70s/it]Succ/Prec:67.3/83.5
+0020000371
+Test 3: Time 1.025s (it:2.862s) Data:0.133s (it:0.092s), Succ/Prec:73.8/86.5:  40%|████████████████████████████████████████▊                                                             | 48/120 [1:13:27<46:46, 38.97s/it]Succ/Prec:73.8/86.5
+Test 3: Time 1.025s (it:1.056s) Data:0.131s (it:0.042s), Succ/Prec:67.9/87.9:  41%|█████████████████████████████████████████▋                                                            | 49/120 [1:13:36<35:21, 29.88s/it]Succ/Prec:67.9/87.9
+0020000351
+Test 3: Time 1.024s (it:0.639s) Data:0.129s (it:0.013s), Succ/Prec:66.9/84.5:  42%|██████████████████████████████████████████▌                                                           | 50/120 [1:14:00<32:55, 28.23s/it]Succ/Prec:66.9/84.5
+0020000359
+0020000421
+Test 3: Time 1.021s (it:6.046s) Data:0.126s (it:0.018s), Succ/Prec:70.1/84.9:  42%|███████████████████████████████████████████▎                                                          | 51/120 [1:14:55<41:22, 35.98s/it]Succ/Prec:70.1/84.9
+0020000359
+0020000371
+0020000384
+0020000385
+0020000386
+0020000435
+Test 3: Time 1.020s (it:7.967s) Data:0.125s (it:0.070s), Succ/Prec:51.7/73.9:  43%|████████████████████████████████████████████▏                                                         | 52/120 [1:16:10<54:19, 47.93s/it]Succ/Prec:51.7/73.9
+0020000372
+0020000373
+0020000374
+0020000375
+Test 3: Time 1.021s (it:0.664s) Data:0.124s (it:0.042s), Succ/Prec:51.3/80.7:  44%|█████████████████████████████████████████████                                                         | 53/120 [1:16:31<44:17, 39.67s/it]Succ/Prec:51.3/80.7
+0020000397
+0020000399
+Test 3: Time 1.020s (it:2.457s) Data:0.122s (it:0.023s), Succ/Prec:74.4/90.1:  45%|█████████████████████████████████████████████▉                                                        | 54/120 [1:16:58<39:35, 35.99s/it]Succ/Prec:74.4/90.1
+0020000402
+Test 3: Time 1.017s (it:2.123s) Data:0.120s (it:0.020s), Succ/Prec:67.9/84.9:  46%|██████████████████████████████████████████████▊                                                       | 55/120 [1:17:23<35:16, 32.55s/it]Succ/Prec:67.9/84.9
+0020000381
+Test 3: Time 1.017s (it:0.729s) Data:0.118s (it:0.021s), Succ/Prec:77.0/87.0:  47%|███████████████████████████████████████████████▌                                                      | 56/120 [1:17:34<27:56, 26.20s/it]Succ/Prec:77.0/87.0
+0020000418
+0020000419
+Test 3: Time 1.015s (it:2.519s) Data:0.117s (it:0.023s), Succ/Prec:62.4/78.5:  48%|████████████████████████████████████████████████▍                                                     | 57/120 [1:17:59<27:11, 25.90s/it]Succ/Prec:62.4/78.5
+0020000394
+Test 3: Time 1.014s (it:0.869s) Data:0.115s (it:0.017s), Succ/Prec:78.1/89.8:  48%|█████████████████████████████████████████████████▎                                                    | 58/120 [1:18:16<23:54, 23.13s/it]Succ/Prec:78.1/89.8
+0020000399
+0020000416
+0020000417
+Test 3: Time 1.012s (it:0.782s) Data:0.113s (it:0.030s), Succ/Prec:69.5/85.2:  49%|██████████████████████████████████████████████████▏                                                   | 59/120 [1:18:46<25:35, 25.18s/it]Succ/Prec:69.5/85.2
+0020000399
+0020000408
+0020000409
+Test 3: Time 1.012s (it:2.416s) Data:0.112s (it:0.053s), Succ/Prec:72.7/86.5:  50%|███████████████████████████████████████████████████                                                   | 60/120 [1:18:58<21:20, 21.35s/it]Succ/Prec:72.7/86.5
+Test 3: Time 1.011s (it:0.832s) Data:0.111s (it:0.022s), Succ/Prec:79.3/93.6:  51%|███████████████████████████████████████████████████▊                                                  | 61/120 [1:19:04<16:23, 16.67s/it]Succ/Prec:79.3/93.6
+0020000417
+Test 3: Time 1.011s (it:2.257s) Data:0.109s (it:0.013s), Succ/Prec:67.3/81.0:  52%|████████████████████████████████████████████████████▋                                                 | 62/120 [1:19:14<14:12, 14.69s/it]Succ/Prec:67.3/81.0
+0020000432
+Test 3: Time 1.010s (it:2.616s) Data:0.108s (it:0.019s), Succ/Prec:71.5/89.6:  52%|█████████████████████████████████████████████████████▌                                                | 63/120 [1:19:34<15:17, 16.10s/it]Succ/Prec:71.5/89.6
+0020000412
+0020000431
+Test 3: Time 1.009s (it:2.167s) Data:0.107s (it:0.038s), Succ/Prec:58.3/80.7:  53%|██████████████████████████████████████████████████████▍                                               | 64/120 [1:19:49<14:56, 16.02s/it]Succ/Prec:58.3/80.7
+Test 3: Time 1.007s (it:1.371s) Data:0.105s (it:0.013s), Succ/Prec:66.9/86.9:  54%|███████████████████████████████████████████████████████▏                                              | 65/120 [1:20:16<17:40, 19.28s/it]Succ/Prec:66.9/86.9
+0020000414
+0020000415
+Test 3: Time 1.007s (it:0.739s) Data:0.104s (it:0.044s), Succ/Prec:75.2/84.7:  55%|████████████████████████████████████████████████████████                                              | 66/120 [1:20:25<14:38, 16.26s/it]Succ/Prec:75.2/84.7
+0020000418
+0020000432
+0020000436
+0020000437
+Test 3: Time 1.007s (it:2.215s) Data:0.103s (it:0.017s), Succ/Prec:59.3/78.8:  56%|████████████████████████████████████████████████████████▉                                             | 67/120 [1:20:48<16:07, 18.26s/it]Succ/Prec:59.3/78.8
+Test 3: Time 1.007s (it:0.858s) Data:0.102s (it:0.013s), Succ/Prec:75.3/92.1:  57%|█████████████████████████████████████████████████████████▊                                            | 68/120 [1:21:01<14:22, 16.59s/it]Succ/Prec:75.3/92.1
+0020000429
+0020000430
+0020000431
+0020000432
+0020000434
+0020000437
+0020000438
+0020000439
+0020000440
+0020000441
+0020000442
+0020000443
+0020000444
+0020000445
+0020000446
+0020000447
+0020000448
+0020000449
+0020000450
+0020000451
+0020000452
+0020000453
+0020000454
+0020000455
+0020000456
+0020000457
+0020000458
+0020000459
+0020000460
+0020000461
+0020000462
+0020000463
+0020000464
+0020000465
+0020000466
+0020000467
+Test 3: Time 1.014s (it:2.102s) Data:0.101s (it:0.025s), Succ/Prec:12.8/18.4:  57%|██████████████████████████████████████████████████████████▋                                           | 69/120 [1:22:20<30:01, 35.33s/it]Succ/Prec:12.8/18.4
+0020000431
+0020000432
+0020000449
+Test 3: Time 1.014s (it:0.763s) Data:0.100s (it:0.024s), Succ/Prec:67.6/83.1:  58%|███████████████████████████████████████████████████████████▌                                          | 70/120 [1:22:39<25:13, 30.28s/it]Succ/Prec:67.6/83.1
+Test 3: Time 1.013s (it:0.766s) Data:0.098s (it:0.014s), Succ/Prec:71.8/87.6:  59%|████████████████████████████████████████████████████████████▎                                         | 71/120 [1:22:51<20:27, 25.04s/it]Succ/Prec:71.8/87.6
+0020000438
+0020000442
+Test 3: Time 1.012s (it:0.813s) Data:0.097s (it:0.025s), Succ/Prec:73.7/81.7:  60%|█████████████████████████████████████████████████████████████▏                                        | 72/120 [1:23:05<17:14, 21.55s/it]Succ/Prec:73.7/81.7
+0020000440
+0020000442
+0020000447
+0020000448
+Test 3: Time 1.011s (it:1.047s) Data:0.096s (it:0.023s), Succ/Prec:66.9/84.9:  61%|██████████████████████████████████████████████████████████████                                        | 73/120 [1:23:36<19:06, 24.40s/it]Succ/Prec:66.9/84.9
+0020000456
+0020000462
+Test 3: Time 1.011s (it:0.798s) Data:0.096s (it:0.050s), Succ/Prec:61.6/86.8:  62%|██████████████████████████████████████████████████████████████▉                                       | 74/120 [1:23:53<17:00, 22.18s/it]Succ/Prec:61.6/86.8
+Test 3: Time 1.010s (it:1.023s) Data:0.095s (it:0.028s), Succ/Prec:77.2/88.3:  62%|███████████████████████████████████████████████████████████████▊                                      | 75/120 [1:23:59<13:03, 17.40s/it]Succ/Prec:77.2/88.3
+Test 3: Time 1.009s (it:1.358s) Data:0.094s (it:0.016s), Succ/Prec:69.8/88.5:  63%|████████████████████████████████████████████████████████████████▌                                     | 76/120 [1:24:20<13:29, 18.39s/it]Succ/Prec:69.8/88.5
+Test 3: Time 1.008s (it:0.964s) Data:0.093s (it:0.038s), Succ/Prec:86.2/96.2:  64%|█████████████████████████████████████████████████████████████████▍                                    | 77/120 [1:24:21<09:28, 13.21s/it]Succ/Prec:86.2/96.2
+Test 3: Time 1.007s (it:0.844s) Data:0.092s (it:0.003s), Succ/Prec:79.4/91.1:  65%|██████████████████████████████████████████████████████████████████▎                                   | 78/120 [1:24:36<09:38, 13.78s/it]Succ/Prec:79.4/91.1
+0020000461
+Test 3: Time 1.006s (it:1.483s) Data:0.091s (it:0.029s), Succ/Prec:69.7/90.8:  66%|███████████████████████████████████████████████████████████████████▏                                  | 79/120 [1:25:01<11:38, 17.05s/it]Succ/Prec:69.7/90.8
+Test 3: Time 1.006s (it:1.246s) Data:0.091s (it:0.042s), Succ/Prec:73.8/93.8:  67%|████████████████████████████████████████████████████████████████████                                  | 80/120 [1:25:02<08:13, 12.35s/it]Succ/Prec:73.8/93.8
+0020000472
+0020000479
+0020000480
+0020000481
+0020000482
+Test 3: Time 1.007s (it:0.654s) Data:0.089s (it:0.003s), Succ/Prec:43.4/55.0:  68%|████████████████████████████████████████████████████████████████████▊                                 | 81/120 [1:25:19<08:48, 13.56s/it]Succ/Prec:43.4/55.0
+0020000482
+Test 3: Time 1.006s (it:2.176s) Data:0.088s (it:0.010s), Succ/Prec:70.9/83.2:  68%|█████████████████████████████████████████████████████████████████████▋                                | 82/120 [1:25:28<07:43, 12.20s/it]Succ/Prec:70.9/83.2
+0020000474
+0020000476
+Test 3: Time 1.006s (it:1.219s) Data:0.088s (it:0.009s), Succ/Prec:71.3/81.8:  69%|██████████████████████████████████████████████████████████████████████▌                               | 83/120 [1:25:51<09:36, 15.59s/it]Succ/Prec:71.3/81.8
+0020000486
+Test 3: Time 1.005s (it:0.791s) Data:0.087s (it:0.032s), Succ/Prec:67.0/80.5:  70%|███████████████████████████████████████████████████████████████████████▍                              | 84/120 [1:26:03<08:46, 14.61s/it]Succ/Prec:67.0/80.5
+0020000483
+0020000484
+0020000485
+0020000486
+0020000487
+0020000489
+0020000490
+0020000491
+0020000492
+0020000493
+0020000494
+0020000495
+0020000496
+0020000497
+0020000498
+0020000507
+0020000515
+0020000518
+Test 3: Time 1.008s (it:2.289s) Data:0.086s (it:0.024s), Succ/Prec:8.1/6.8:  71%|█████████████████████████████████████████████████████████████████████████▋                              | 85/120 [1:26:52<14:32, 24.91s/it]Succ/Prec:8.1/6.8
+0020000488
+0020000489
+0020000490
+0020000491
+0020000492
+0020000493
+Test 3: Time 1.009s (it:0.653s) Data:0.085s (it:0.026s), Succ/Prec:37.7/49.6:  72%|█████████████████████████████████████████████████████████████████████████                             | 86/120 [1:27:10<12:55, 22.80s/it]Succ/Prec:37.7/49.6
+0020000487
+0020000495
+Test 3: Time 1.009s (it:2.171s) Data:0.085s (it:0.008s), Succ/Prec:60.9/75.5:  72%|█████████████████████████████████████████████████████████████████████████▉                            | 87/120 [1:27:21<10:36, 19.28s/it]Succ/Prec:60.9/75.5
+0020000489
+0020000490
+0020000491
+0020000496
+Test 3: Time 1.007s (it:2.457s) Data:0.084s (it:0.008s), Succ/Prec:70.5/85.2:  73%|██████████████████████████████████████████████████████████████████████████▊                           | 88/120 [1:27:59<13:16, 24.88s/it]Succ/Prec:70.5/85.2
+0020000500
+0020000504
+0020000506
+0020000507
+0020000508
+0020000509
+0020000510
+0020000511
+0020000512
+0020000513
+0020000515
+0020000516
+0020000517
+0020000518
+0020000520
+0020000521
+0020000522
+0020000523
+0020000524
+Test 3: Time 1.011s (it:0.636s) Data:0.083s (it:0.024s), Succ/Prec:20.2/27.5:  74%|███████████████████████████████████████████████████████████████████████████▋                          | 89/120 [1:28:45<16:02, 31.06s/it]Succ/Prec:20.2/27.5
+0020000503
+Test 3: Time 1.010s (it:0.795s) Data:0.082s (it:0.016s), Succ/Prec:75.5/90.5:  75%|████████████████████████████████████████████████████████████████████████████▌                         | 90/120 [1:28:54<12:13, 24.46s/it]Succ/Prec:75.5/90.5
+0020000507
+0020000515
+0020000518
+0020000553
+Test 3: Time 1.009s (it:1.238s) Data:0.082s (it:0.021s), Succ/Prec:67.5/83.8:  76%|█████████████████████████████████████████████████████████████████████████████▎                        | 91/120 [1:29:41<15:07, 31.31s/it]Succ/Prec:67.5/83.8
+0020000512
+0020000513
+0020000514
+0020000515
+0020000523
+Test 3: Time 1.009s (it:2.190s) Data:0.081s (it:0.069s), Succ/Prec:60.2/72.4:  77%|██████████████████████████████████████████████████████████████████████████████▏                       | 92/120 [1:30:02<13:11, 28.27s/it]Succ/Prec:60.2/72.4
+0020000514
+Test 3: Time 1.009s (it:2.491s) Data:0.081s (it:0.013s), Succ/Prec:69.0/85.0:  78%|███████████████████████████████████████████████████████████████████████████████                       | 93/120 [1:30:08<09:40, 21.49s/it]Succ/Prec:69.0/85.0
+0020000524
+0020000536
+0020000537
+Test 3: Time 1.010s (it:2.406s) Data:0.080s (it:0.006s), Succ/Prec:66.7/85.5:  78%|███████████████████████████████████████████████████████████████████████████████▉                      | 94/120 [1:30:28<09:08, 21.11s/it]Succ/Prec:66.7/85.5
+0020000524
+0020000525
+0020000526
+0020000527
+0020000528
+0020000529
+0020000530
+0020000531
+0020000532
+0020000533
+0020000534
+0020000535
+0020000536
+0020000537
+0020000538
+0020000539
+0020000540
+Test 3: Time 1.013s (it:0.744s) Data:0.079s (it:0.025s), Succ/Prec:26.5/26.8:  79%|████████████████████████████████████████████████████████████████████████████████▊                     | 95/120 [1:31:08<11:06, 26.68s/it]Succ/Prec:26.5/26.8
+0020000524
+Test 3: Time 1.012s (it:3.068s) Data:0.079s (it:0.032s), Succ/Prec:73.4/87.6:  80%|█████████████████████████████████████████████████████████████████████████████████▌                    | 96/120 [1:31:46<12:00, 30.02s/it]Succ/Prec:73.4/87.6
+0020000543
+0020000544
+0020000545
+0020000546
+0020000547
+0020000548
+0020000549
+0020000550
+0020000551
+0020000552
+0020000553
+0020000554
+0020000555
+0020000556
+0020000557
+0020000558
+0020000559
+0020000560
+0020000561
+0020000562
+0020000563
+0020000564
+Test 3: Time 1.016s (it:2.084s) Data:0.078s (it:0.024s), Succ/Prec:21.8/26.9:  81%|██████████████████████████████████████████████████████████████████████████████████▍                   | 97/120 [1:32:41<14:26, 37.65s/it]Succ/Prec:21.8/26.9
+0020000536
+0020000537
+0020000538
+0020000540
+0020000544
+Test 3: Time 1.015s (it:1.334s) Data:0.078s (it:0.018s), Succ/Prec:71.0/87.5:  82%|███████████████████████████████████████████████████████████████████████████████████▎                  | 98/120 [1:33:24<14:24, 39.31s/it]Succ/Prec:71.0/87.5
+0020000538
+Test 3: Time 1.012s (it:1.767s) Data:0.078s (it:0.064s), Succ/Prec:65.6/85.2:  82%|████████████████████████████████████████████████████████████████████████████████████▏                 | 99/120 [1:34:10<14:25, 41.21s/it]Succ/Prec:65.6/85.2
+0020000551
+0020000552
+Test 3: Time 1.012s (it:2.632s) Data:0.077s (it:0.031s), Succ/Prec:69.5/86.1:  83%|████████████████████████████████████████████████████████████████████████████████████▏                | 100/120 [1:34:26<11:15, 33.79s/it]Succ/Prec:69.5/86.1
+0020000544
+0020000552
+0020000553
+Test 3: Time 1.011s (it:0.725s) Data:0.077s (it:0.024s), Succ/Prec:53.1/72.4:  84%|█████████████████████████████████████████████████████████████████████████████████████                | 101/120 [1:34:51<09:49, 31.05s/it]Succ/Prec:53.1/72.4
+0020000550
+0020000559
+Test 3: Time 1.011s (it:0.656s) Data:0.076s (it:0.039s), Succ/Prec:66.0/86.9:  85%|█████████████████████████████████████████████████████████████████████████████████████▊               | 102/120 [1:35:15<08:40, 28.93s/it]Succ/Prec:66.0/86.9
+0020000552
+0020000553
+0020000554
+0020000555
+0020000556
+0020000557
+0020000558
+0020000559
+0020000560
+0020000561
+0020000562
+0020000563
+0020000564
+0020000565
+0020000566
+0020000567
+0020000568
+0020000569
+0020000570
+Test 3: Time 1.017s (it:1.996s) Data:0.076s (it:0.038s), Succ/Prec:44.6/71.6:  86%|██████████████████████████████████████████████████████████████████████████████████████▋              | 103/120 [1:36:10<10:25, 36.80s/it]Succ/Prec:44.6/71.6
+Test 3: Time 1.016s (it:0.885s) Data:0.075s (it:0.013s), Succ/Prec:78.4/91.6:  87%|███████████████████████████████████████████████████████████████████████████████████████▌             | 104/120 [1:36:35<08:49, 33.09s/it]Succ/Prec:78.4/91.6
+0020000589
+0020000600
+0020000603
+0020000605
+0020000606
+0020000607
+0020000608
+0020000609
+0020000610
+0020000611
+0020000612
+0020000613
+0020000614
+0020000615
+0020000616
+0020000617
+0020000618
+0020000619
+0020000620
+0020000621
+0020000622
+0020000623
+0020000624
+0020000625
+0020000626
+0020000627
+0020000628
+0020000629
+0020000630
+0020000631
+0020000632
+0020000633
+0020000637
+0020000638
+0020000639
+0020000640
+0020000641
+0020000643
+0020000644
+0020000645
+0020000648
+0020000649
+0020000650
+0020000651
+0020000652
+0020000653
+0020000656
+0020000657
+0020000658
+0020000659
+0020000660
+0020000661
+0020000662
+0020000663
+0020000664
+0020000665
+0020000666
+0020000667
+0020000668
+0020000669
+0020000670
+0020000671
+0020000672
+0020000673
+0020000674
+0020000675
+0020000676
+0020000677
+0020000678
+0020000679
+0020000680
+0020000681
+0020000682
+0020000683
+0020000684
+0020000685
+0020000686
+0020000687
+0020000688
+0020000689
+0020000690
+0020000691
+0020000692
+0020000693
+0020000694
+0020000695
+0020000696
+0020000697
+0020000698
+0020000699
+0020000700
+0020000701
+0020000702
+0020000703
+0020000704
+0020000705
+0020000706
+0020000707
+0020000708
+0020000709
+0020000710
+0020000711
+0020000712
+0020000713
+0020000714
+0020000715
+0020000716
+0020000717
+0020000718
+0020000719
+0020000720
+0020000721
+0020000722
+0020000723
+0020000724
+0020000725
+0020000726
+0020000727
+0020000728
+0020000729
+0020000730
+0020000731
+0020000732
+0020000734
+0020000735
+0020000736
+0020000738
+0020000739
+0020000740
+0020000741
+0020000742
+0020000743
+0020000744
+0020000745
+0020000746
+0020000747
+0020000748
+0020000749
+0020000750
+0020000751
+0020000752
+0020000753
+0020000754
+0020000755
+0020000756
+0020000757
+0020000758
+0020000760
+0020000761
+0020000762
+0020000763
+0020000764
+0020000765
+0020000766
+0020000767
+0020000768
+0020000769
+0020000770
+0020000771
+0020000774
+0020000775
+0020000776
+0020000777
+0020000778
+0020000779
+0020000780
+0020000781
+0020000782
+0020000783
+0020000784
+0020000785
+0020000786
+0020000787
+0020000788
+0020000789
+0020000790
+0020000791
+0020000792
+0020000793
+0020000794
+0020000795
+0020000800
+0020000805
+0020000811
+0020000816
+0020000835
+Test 3: Time 1.045s (it:0.642s) Data:0.075s (it:0.039s), Succ/Prec:9.1/11.2:  88%|████████████████████████████████████████████████████████████████████████████████████████▍            | 105/120 [1:44:06<39:38, 158.56s/it]Succ/Prec:9.1/11.2
+0020000572
+0020000573
+0020000574
+0020000575
+0020000576
+0020000579
+0020000583
+0020000585
+0020000593
+Test 3: Time 1.046s (it:2.039s) Data:0.075s (it:0.133s), Succ/Prec:7.4/4.3:  88%|██████████████████████████████████████████████████████████████████████████████████████████            | 106/120 [1:44:33<27:48, 119.17s/it]Succ/Prec:7.4/4.3
+0020000584
+0020000643
+0020000644
+0020000645
+0020000646
+0020000647
+0020000648
+0020000649
+0020000650
+0020000651
+0020000652
+0020000653
+0020000655
+0020000657
+0020000658
+0020000659
+0020000660
+0020000661
+0020000662
+0020000663
+0020000664
+0020000665
+0020000666
+0020000667
+0020000668
+0020000669
+0020000670
+0020000671
+0020000672
+0020000673
+0020000674
+0020000675
+0020000676
+0020000677
+0020000678
+0020000679
+0020000680
+0020000681
+0020000682
+0020000683
+0020000684
+0020000685
+0020000686
+0020000688
+0020000689
+0020000690
+0020000691
+0020000692
+0020000693
+0020000694
+0020000695
+0020000696
+0020000697
+0020000698
+0020000699
+0020000700
+0020000701
+0020000702
+0020000703
+0020000704
+0020000706
+0020000707
+0020000708
+0020000709
+0020000710
+0020000711
+0020000712
+0020000713
+0020000714
+0020000715
+0020000717
+0020000718
+0020000719
+0020000721
+0020000723
+0020000724
+0020000725
+0020000726
+0020000727
+0020000728
+0020000729
+0020000730
+0020000731
+0020000732
+0020000733
+0020000734
+0020000735
+0020000736
+0020000737
+0020000739
+0020000740
+0020000741
+0020000742
+0020000744
+0020000749
+0020000752
+0020000753
+0020000754
+0020000755
+0020000756
+0020000757
+0020000758
+0020000760
+0020000763
+0020000764
+0020000765
+0020000766
+0020000767
+0020000768
+0020000770
+0020000771
+0020000773
+0020000774
+0020000775
+0020000776
+0020000777
+0020000778
+0020000779
+0020000780
+0020000781
+0020000782
+0020000783
+0020000784
+0020000785
+0020000786
+0020000787
+0020000788
+0020000789
+0020000790
+0020000791
+0020000792
+0020000793
+0020000794
+0020000795
+0020000796
+0020000797
+0020000798
+0020000799
+0020000800
+0020000801
+0020000802
+0020000803
+0020000804
+0020000805
+0020000806
+0020000807
+0020000808
+0020000809
+0020000810
+0020000811
+0020000812
+0020000813
+0020000814
+0020000815
+0020000816
+0020000817
+0020000818
+0020000819
+0020000820
+0020000821
+0020000822
+0020000823
+0020000824
+0020000825
+0020000826
+0020000827
+0020000828
+0020000829
+0020000830
+0020000831
+0020000832
+0020000833
+0020000834
+0020000835
+0020000836
+Test 3: Time 1.074s (it:2.431s) Data:0.075s (it:0.014s), Succ/Prec:15.0/19.9:  89%|█████████████████████████████████████████████████████████████████████████████████████████▏          | 107/120 [1:51:54<46:41, 215.48s/it]Succ/Prec:15.0/19.9
+0020000596
+0020000597
+Test 3: Time 1.074s (it:3.184s) Data:0.076s (it:0.212s), Succ/Prec:55.2/78.2:  90%|██████████████████████████████████████████████████████████████████████████████████████████          | 108/120 [1:52:07<30:57, 154.79s/it]Succ/Prec:55.2/78.2
+0020000596
+Test 3: Time 1.073s (it:1.138s) Data:0.076s (it:0.017s), Succ/Prec:72.6/84.4:  91%|██████████████████████████████████████████████████████████████████████████████████████████▊         | 109/120 [1:52:26<20:55, 114.18s/it]Succ/Prec:72.6/84.4
+Test 3: Time 1.071s (it:0.802s) Data:0.075s (it:0.034s), Succ/Prec:68.4/87.1:  92%|████████████████████████████████████████████████████████████████████████████████████████████▌        | 110/120 [1:52:46<14:19, 85.94s/it]Succ/Prec:68.4/87.1
+Test 3: Time 1.071s (it:0.638s) Data:0.075s (it:0.046s), Succ/Prec:68.3/90.0:  92%|█████████████████████████████████████████████████████████████████████████████████████████████▍       | 111/120 [1:52:48<09:06, 60.72s/it]Succ/Prec:68.3/90.0
+Test 3: Time 1.071s (it:0.009s) Data:0.074s (it:0.004s), Succ/Prec:100.0/100.0:  93%|████████████████████████████████████████████████████████████████████████████████████████████▍      | 112/120 [1:52:48<08:05, 60.72s/it]Succ/Prec:100.0/100.0
+Test 3: Time 1.070s (it:0.748s) Data:0.074s (it:0.002s), Succ/Prec:78.4/89.1:  94%|███████████████████████████████████████████████████████████████████████████████████████████████      | 113/120 [1:52:53<05:03, 43.32s/it]Succ/Prec:78.4/89.1
+Test 3: Time 1.070s (it:0.868s) Data:0.073s (it:0.015s), Succ/Prec:71.3/88.8:  95%|███████████████████████████████████████████████████████████████████████████████████████████████▉     | 114/120 [1:52:54<03:03, 30.60s/it]Succ/Prec:71.3/88.8
+0020000617
+0020000623
+Test 3: Time 1.070s (it:2.014s) Data:0.072s (it:0.003s), Succ/Prec:70.3/87.8:  96%|████████████████████████████████████████████████████████████████████████████████████████████████▊    | 115/120 [1:53:02<01:58, 23.70s/it]Succ/Prec:70.3/87.8
+0020000620
+0020000622
+0020000623
+0020000624
+0020000625
+0020000626
+0020000628
+0020000629
+0020000630
+0020000632
+0020000633
+0020000634
+0020000635
+0020000636
+Test 3: Time 1.072s (it:1.977s) Data:0.072s (it:0.006s), Succ/Prec:15.3/15.0:  97%|█████████████████████████████████████████████████████████████████████████████████████████████████▋   | 116/120 [1:53:34<01:44, 26.10s/it]Succ/Prec:15.3/15.0
+Test 3: Time 1.071s (it:0.660s) Data:0.071s (it:0.012s), Succ/Prec:63.1/91.9:  98%|██████████████████████████████████████████████████████████████████████████████████████████████████▍  | 117/120 [1:53:36<00:57, 19.08s/it]Succ/Prec:63.1/91.9
+0020000622
+0020000623
+Test 3: Time 1.072s (it:3.529s) Data:0.071s (it:0.004s), Succ/Prec:50.6/63.1:  98%|███████████████████████████████████████████████████████████████████████████████████████████████████▎ | 118/120 [1:53:43<00:30, 15.31s/it]Succ/Prec:50.6/63.1
+Test 3: Time 1.071s (it:0.647s) Data:0.070s (it:0.004s), Succ/Prec:59.2/82.7:  99%|████████████████████████████████████████████████████████████████████████████████████████████████████▏| 119/120 [1:53:51<00:13, 13.05s/it]Succ/Prec:59.2/82.7
+0020000736
+0020000756
+0020000757
+0020000758
+0020000759
+0020000760
+0020000761
+0020000762
+0020000763
+0020000764
+Test 3: Time 1.071s (it:0.632s) Data:0.070s (it:0.009s), Succ/Prec:36.1/54.9: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 120/120 [1:54:26<00:00, 19.69s/it]Succ/Prec:36.1/54.9
+2019-11-27 05:41:48,080 [MainThread  ] [INFO ]  Succ/Prec:58.4/73.4
+2019-11-27 05:41:49,704 [MainThread  ] [INFO ]  mean Succ/Prec 58.44402868724665/73.37932647333957
+2019-11-27 05:41:49,704 [MainThread  ] [INFO ]  Total Execution Time is 20468.92404294014 seconds
+
+Process finished with exit code 0
+
