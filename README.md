@@ -49,7 +49,7 @@ ln -s /media/fengzicai/fzc/KITTI_TRACKING/training/  data/
 
 
 ## Train
-* this code is based on [pointrcnn](https://github.com/sshaoshuai/PointRCNN) and [ShapeCompletion3DTracking](https://github.com/SilvioGiancola/ShapeCompletion3DTracking). The training of RPN stage is the same as the stage of PointRCNN, please refer to [pointrcnn](https://github.com/sshaoshuai/PointRCNN)
+* this code is based on [pointrcnn](https://github.com/sshaoshuai/PointRCNN) and [ShapeCompletion3DTracking](https://github.com/SilvioGiancola/ShapeCompletion3DTracking). The training of RPN stage is the same as the stage of PointRCNN, please refer to [pointrcnn](https://github.com/sshaoshuai/PointRCNN).
 
    
 ### Training of Siamese stage
