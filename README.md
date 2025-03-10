@@ -60,7 +60,7 @@ python train_siamese.py --dataset KITTI --cfg_file /data/3DTracking/tools/cfgs/d
 ```
 
 
-## eval
+## Eval
 
 Test the RPN model, and the generated predictions will be used for training the Siamese stage.
 
